@@ -2,7 +2,7 @@
 #define TERRAIN_H
 
 #include <string>
-#include <CasePropriete.h>
+#include "CasePropriete.h"
 
 using namespace std;
 

@@ -2,8 +2,8 @@
 #define CASEPROPRIETE_H
 
 #include <string>
-#include <Joueur.h>
-#include <Case.h>
+#include "Joueur.h"
+#include "Carte.h"
 
 using namespace std;
 
@@ -17,14 +17,13 @@ class CasePropriete : public Case {
         void setProprietaire(Joueur proprietaire);
         void hypothequer();
         void deshypothequer();
-        bool payerLoyer(Joueur joueur);
 
     private:
         string nom_;
         int prix_;
         int valeurHypotheque_;
         Joueur proprietaire_;
-        bool hypoteque_;
+        bool hypotheque_;
         string  type_couleur_;
 };
 

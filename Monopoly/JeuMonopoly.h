@@ -2,13 +2,13 @@
 #define JEUMONOPOLY_H
 
 #include <string>
-#include <Joueur.h>
-#include <De.h>
-#include <Plateau.h>
-#include <Banque.h>
-#include <CarteChance.h>
-#include <CarteCaisseDeCommunaute.h>
-#include <Langue.h>
+#include "Joueur.h"
+#include "De.h"
+#include "Plateau.h"
+#include "Banque.h"
+#include "CarteChance.h"
+#include "CarteCaisseDeCommunaute.h"
+#include "Langue.h"
 
 
 using namespace std;
@@ -26,7 +26,7 @@ class JeuMonopoly {
         void jouerTour(Joueur j);
 
     private:
-        Joueur tourDuJoueur_;
+        int tourDuJoueur_;
         De des_[2];
         Plateau plateau_;
         Banque banque_;

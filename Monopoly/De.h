@@ -10,6 +10,7 @@ class De {
     public:
         De();
         int getValeur();
+        void lancerDe();
         void afficherResultat();
 
     private:

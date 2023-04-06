@@ -11,7 +11,6 @@ class Case {
         Case();
         Case(int position);
         int getPosition();
-        Case getSuivante();
 
     private:
         int position_;

@@ -2,7 +2,7 @@
 #define PLATEAU_H
 
 #include <string>
-#include <Case.h>
+#include "Carte.h"
 #include <unordered_map>
 #include <vector>
 

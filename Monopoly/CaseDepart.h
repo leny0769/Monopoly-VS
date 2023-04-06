@@ -2,7 +2,7 @@
 #define CASEDEPART_H
 
 #include <string>
-#include <Case.h>
+#include "Carte.h"
 
 using namespace std;
 
