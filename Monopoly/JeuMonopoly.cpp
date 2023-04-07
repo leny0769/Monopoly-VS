@@ -65,5 +65,35 @@ public:
             }
         }
     }
-    void jouerTour(Joueur j);
+    void jouerTour(Joueur j) {
+        //PEUT CONSTRUIRE DES MAISONS
+        //PEUT PROCEDER A UN ECHANGE
+        //PEUT HYPOTHEQUER DES PROPRIETES
+
+
+        //FAIRE EN SORTE QUE LE JOUEUR APPUIE SUR UN BOUTON POUR LANCER LES DES
+        int lance = 0;
+        for (De d: this.des_) {
+            d.lancerDe;
+            lance += d->getValeur;
+        }
+        while (lance > 0) {
+            j.incrementPosition();
+            if (j.getPosition == 0) {
+                //DONNER LE SALAIRE DE LA CASE DEPART
+            }
+            j--;
+        }
+
+        //PROPOSER D'ACHETER LA PROPRIETE SUR LAQUELLE IL TOMBE
+        //OU TIRER UNE CARTE ET JOUER SON EFFET
+        //OU PAYER LE LOYER
+        //OU ALLER EN PRISON
+        //OU PAYER TAXES
+
+        //PEUT CONSTRUIRE DES MAISONS
+        //PEUT PROCEDER A UN ECHANGE
+        //PEUT HYPOTHEQUER DES PROPRIETES
+        //PEUT PASSER SON TOUR
+    }
 };

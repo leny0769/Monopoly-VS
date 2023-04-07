@@ -26,6 +26,9 @@ class Joueur {
 		void allerEnPrison();
 		void addArgent(int montant);
 		bool subArgent(int montant);
+		int getPosition();
+		void setPosition();
+		void incrementPosition();
 
     private:
         string nom_;

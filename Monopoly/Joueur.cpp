@@ -33,6 +33,9 @@ public:
 		this->nombreTourPrison_ = 0;
 		this->statut_ = "playing";
 	}
+	int getPosition() {
+		return this.position_
+	}
 	int getSolde() {
 		return this->argent_;
 	}
@@ -50,6 +53,14 @@ public:
 	}
 	string getStatut() {
 		return this->statut;
+	}
+	void setPosition(int a){
+		if ((a >= 0) && (a < 40)) {
+			this->position_ = a;
+		}
+	}
+	void incrementPosition() {
+		this->position_ = (this->getPosition() + 1) % 40;
 	}
 	void setStatut(string stat) {
 		if ((stat == "playing") || (stat == "bankrupt")) {
