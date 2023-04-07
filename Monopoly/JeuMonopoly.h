@@ -19,10 +19,16 @@ class JeuMonopoly {
         JeuMonopoly();
         JeuMonopoly(De des[2], Plateau plateau, Banque banque, vector<Joueur> joueurs, CarteChance cartesChance[16], 
             CarteCaisseDeCommunaute cartesCaisseDeCommunaute[16], Langue langue);
+        int getTourDuJoueur();
+        De getDes();
+        vector<Joueur> getJoueurs();
+        Joueur getJoueur();
         void commencerPartie();
         void finirPartie();
         void lancerDes();
         void getNextJoueur();
+        bool isOngoing();
+        Joueur getWinner();
         void jouerTour(Joueur j);
 
     private:

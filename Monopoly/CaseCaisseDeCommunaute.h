@@ -12,7 +12,6 @@ class CaseCaisseDeCommunaute : public Case {
     public:
         CaseCaisseDeCommunaute();
         CaseCaisseDeCommunaute(int position);
-        CarteCaisseDeCommunaute tirerCarteCaisseDeCommunaute();
 
     private:
 };

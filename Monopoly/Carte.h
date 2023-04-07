@@ -9,11 +9,12 @@ using namespace std;
 class Carte {
     public:
         Carte();
-        Carte(string description);
+        Carte(string description,int id);
         void afficherCarte();
 
     private:
         string description_;
+        int id_;
 };
 
 #endif;

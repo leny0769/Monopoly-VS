@@ -10,7 +10,7 @@ using namespace std;
 class CarteChance : public Carte {
     public:
         CarteChance();
-        CarteChance(string description);
+        CarteChance(string description, int id);
 
     private:
 };

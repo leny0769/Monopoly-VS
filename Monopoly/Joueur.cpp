@@ -16,6 +16,7 @@ private:
 	int nombreTourPrison_;
 	int nombreDoubles_;
 	bool prison_;
+	string statut;
 public:
 	Joueur() {
 
@@ -30,6 +31,7 @@ public:
 		this->carteSortiePrison_ = 0;
 		this->nombreDoubles_ = 0;
 		this->nombreTourPrison_ = 0;
+		this->statut_ = "playing";
 	}
 	int getSolde() {
 		return this->argent_;
@@ -45,6 +47,14 @@ public:
 	}
 	int getNbDoubles() {
 		return this->nombreDoubles_;
+	}
+	string getStatut() {
+		return this->statut;
+	}
+	void setStatut(string stat) {
+		if ((stat == "playing") || (stat == "bankrupt")) {
+			this->statut = stat;
+		}
 	}
 	void setNbCarteSortiePrison(int a) {
 		if (a >= 0) {

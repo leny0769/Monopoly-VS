@@ -12,7 +12,6 @@ class CaseChance : public Case {
     public:
         CaseChance();
         CaseChance(int position);
-        CarteChance tirerCarteChance();
 
     private:
 };

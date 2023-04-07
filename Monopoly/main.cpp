@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "JeuMonopoly.h"
+#include "Joueur.h"
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1280, 720), "Monopoly");
@@ -24,6 +25,15 @@ int main()
         window.draw(gameScreen);
         window.display();
     }
+
+
+    JeuMonopoly Partie;
+    while (Partie.isOngoing()) {
+        Joueur j = Partie.getJoueur();
+        Partie.jouerTour(j);
+        Partie.getNextJoueur();
+    }
+    Joueur gagnant = Partie.getWinner();
 
     return 0;
 }

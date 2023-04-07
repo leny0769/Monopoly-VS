@@ -12,11 +12,20 @@ using namespace std;
 
 class Joueur {
     public:
-        Joueur();
-        Joueur(string nom, int argent, Pion pion);
-        void allerEnPrison();
-        void addArgent(int montant);
-        bool subArgent(int montant);
+		int getSolde();
+		string getNom();
+		int getNbCarteSortiePrison();
+		int getNbTourPrison();
+		int getNbDoubles();
+		string getStatut();
+		void setStatut(string stat);
+		void setNbCarteSortiePrison(int a);
+		void setEnPrison(bool b);
+		void setNbDouble(int a);
+		void setNombreTourPrison(int a);
+		void allerEnPrison();
+		void addArgent(int montant);
+		bool subArgent(int montant);
 
     private:
         string nom_;

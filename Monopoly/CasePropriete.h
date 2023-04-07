@@ -11,7 +11,7 @@ using namespace std;
 class CasePropriete : public Case {
     public:
         CasePropriete();
-        CasePropriete(string nom, int prix, int valeurHypotheque, string type_couleur, int position);
+        CasePropriete(string nom, int prix, int valeurHypotheque, string type_couleur, int position, Joueur proprietaire);
         int getPrix();
         bool getHypotheque();
         void setProprietaire(Joueur proprietaire);
