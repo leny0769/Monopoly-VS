@@ -78,7 +78,7 @@ public:
             lance += d->getValeur;
         }
         while (lance > 0) {
-            j.incrementPosition();
+            j.incrementPosition(); //Pour faire avancer case par case sur le plateau
             if (j.getPosition == 0) {
                 //DONNER LE SALAIRE DE LA CASE DEPART
             }
