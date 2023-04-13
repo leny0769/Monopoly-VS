@@ -3,7 +3,7 @@
 using namespace std;
 
 
-class Case {
+/*class Case {
 private:
     int position_;
     //PathImage image_;
@@ -15,4 +15,4 @@ public:
     int getPosition() {
         return this.position_;
     }
-};
+};*/

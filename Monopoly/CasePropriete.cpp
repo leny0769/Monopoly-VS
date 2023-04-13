@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class CasePropriete : public Case {
+/*class CasePropriete : public Case {
 private:
     string nom_;
     int prix_;
@@ -48,4 +48,4 @@ public:
         this->hypotheque_ = b;
     }
 
-};
+};*/

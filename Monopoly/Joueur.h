@@ -12,6 +12,8 @@ using namespace std;
 
 class Joueur {
     public:
+		Joueur();
+		Joueur(string nom, int argent, Pion pion);
 		int getSolde();
 		string getNom();
 		int getNbCarteSortiePrison();
@@ -27,17 +29,20 @@ class Joueur {
 		void addArgent(int montant);
 		bool subArgent(int montant);
 		int getPosition();
-		void setPosition();
+		void setPosition(int position);
 		void incrementPosition();
 
     private:
         string nom_;
         int argent_;
-        unordered_map<std::string, CasePropriete[]> proprietes_;
+        //unordered_map<std::string, CasePropriete[]> proprietes_;
         Pion pion_;
         int position_;
         int carteSortiePrison_;
         bool prison_;
+		int nombreDoubles_;
+		int nombreTourPrison_;
+		string statut_;
 };
 
 #endif;

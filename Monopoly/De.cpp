@@ -5,7 +5,7 @@
 using namespace std;
 
 
-class De {
+/*class De {
 private:
     int valeur;
 public:
@@ -19,4 +19,4 @@ public:
         this->valeur = rand % 7;
     }
     void afficherResultat();
-};
+};*/
