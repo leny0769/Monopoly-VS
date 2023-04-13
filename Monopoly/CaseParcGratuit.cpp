@@ -5,10 +5,8 @@
 using namespace std;
 
 
-class CaseParcGratuit : public Case {
-public:
-    CaseParcGratuit();
-    CaseParcGratuit(int  position) {
-        Case(position);
-    }
-};
+
+CaseParcGratuit();
+CaseParcGratuit(int  position) {
+     Case(position);
+}

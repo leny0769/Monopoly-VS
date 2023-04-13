@@ -105,3 +105,7 @@ bool Joueur::subArgent(int montant) {
 	argent_ -= montant;
 }
 
+bool  Joueur::operator==(const Joueur& j1, const Joueur& j2)
+{
+	return (j1.getNom() == j2.getNom());
+}

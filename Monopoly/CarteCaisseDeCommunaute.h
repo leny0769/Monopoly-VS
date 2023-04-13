@@ -10,9 +10,11 @@ using namespace std;
 class CarteCaisseDeCommunaute : public Carte {
     public:
         CarteCaisseDeCommunaute();
-        CarteCaisseDeCommunaute(string description, int id);
+        CarteCaisseDeCommunaute(int id);
 
     private:
+        int id_;
+        string description_;
 };
 
 #endif;

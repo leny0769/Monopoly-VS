@@ -16,9 +16,7 @@ using namespace std;
 
 class JeuMonopoly {
     public:
-        JeuMonopoly();
-        JeuMonopoly(De des[2], Plateau plateau, Banque banque, vector<Joueur> joueurs, CarteChance cartesChance[16], 
-            CarteCaisseDeCommunaute cartesCaisseDeCommunaute[16], Langue langue);
+        JeuMonopoly(vector<Joueur> joueurs);
         int getTourDuJoueur();
         De getDes();
         vector<Joueur> getJoueurs();

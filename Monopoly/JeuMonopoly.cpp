@@ -12,20 +12,24 @@
 
 using namespace std;
 
+JeuMonopoly(vector<Joueur> joueurs){
+	this.des_[1] = De();
+	this.des_[2] = De();
+	this.plateau_ = Plateau();
+	this.banque_ = Banque();
+	this.joueurs_ = joueurs;
+	this.cartesChances = ;
+	this.cartesCaisseDeCommunaute_ = ;
+	srand(time(NULL));
+	int rand = std::rand();
+	this->tourDuJoueur_ = rand % this.joueurs_.size();
 
-/*JeuMonopoly::JeuMonopoly() {
-}
-
-JeuMonopoly::JeuMonopoly(De des[2], Plateau plateau, Banque banque, vector<Joueur> joueurs, CarteChance cartesChance[16],
-	CarteCaisseDeCommunaute cartesCaisseDeCommunaute[16], Langue langue) {
-
-}
-
-int JeuMonopoly::getTourDuJoueur() {
+int getTourDuJoueur() {
 	return this->tourDuJoueur_;
 }
 De getDes() {
 	return this->des_;
+
 }
 vector<Joueur> getJoueurs() {
 	return this->joueurs_;
@@ -33,9 +37,11 @@ vector<Joueur> getJoueurs() {
 Joueur getJoueur() {
 	return this->joueurs_[this->tourDuJoueur_];
 }
+
 void commencerPartie();
 void finirPartie();
 void lancerDes();
+
 void getNextJoueur() {
 	this->tourDuJoueur_ = (this->tourDuJoueur_ + 1) % this->joueurs_.size;
 }
@@ -90,4 +96,3 @@ void jouerTour(Joueur j) {
 	//PEUT PROCEDER A UN ECHANGE
 	//PEUT HYPOTHEQUER DES PROPRIETES
 	//PEUT PASSER SON TOUR
-}*/

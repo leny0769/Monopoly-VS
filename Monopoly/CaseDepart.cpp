@@ -5,15 +5,12 @@
 using namespace std;
 
 
-class CaseDepart : public Case {
-public:
-    CaseDepart();
-    CaseDepart(int salaire, int position) {
-        Case(position);
-        this->salaire_ = salaire;
-    }
-    int getSalaire();
 
-private:
-    int salaire_;
-};
+CaseDepart();
+CaseDepart(int salaire, int position) {
+    Case(position);
+    this->salaire_ = salaire;
+    }
+int getSalaire() {
+    return this.salaire_;
+}

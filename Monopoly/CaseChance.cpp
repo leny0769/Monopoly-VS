@@ -5,10 +5,6 @@
 using namespace std;
 
 
-class CaseChance : public Case {
-public:
-    CaseChance();
-    CaseChance(int position);
 
-private:
-};
+CaseChance();
+CaseChance(int position);
