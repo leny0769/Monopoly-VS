@@ -10,3 +10,8 @@ Gare::Gare(int position, std::string classe,int loyerGare[4], std::string nom, i
     CasePropriete(position,classe,nom, prix,type_couleur);
     this->loyer_ = loyerGare;
 }
+
+int Gare::getValeurHypotheque() {
+    int valHypotheque = this->getPrix() / 2;
+    return valHypotheque;
+}

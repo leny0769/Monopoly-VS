@@ -11,3 +11,7 @@ ServicePublic::ServicePublic(int position, std::string classe, int loyer[4], std
     CasePropriete(position,classe,nom, prix,type_couleur);
     this->loyer_ = loyer;
 }
+int ServicePublic::getValeurHypotheque() {
+    int valHypotheque = this.getPrix() / 2;
+    return valHypotheque;
+}

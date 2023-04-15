@@ -15,6 +15,10 @@ Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int
 int Terrain::getLoyer() {
     return this->loyer_[nombreMaison_]
 }
+int Terrain::getValeurHypotheque() {
+    int valHypotheque = (this->getPrix() * (1 + this->nombreMaison_ / 5)) / 2;
+    return valHypotheque;
+}
 void Terrain::construireMaison() {
     if (this->nombreMaison_ < 5)
     {

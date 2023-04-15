@@ -2,6 +2,7 @@
 #include "Joueur.h"
 #include "Case.h"
 #include "CasePropriete.h"
+#include <stdexcept>;
 
 
 using namespace std;
@@ -38,5 +39,22 @@ void CasePropriete::setProprietaire(Joueur& proprietaire) {
     this->sansProprietaire_ = false;
 }
 void CasePropriete::setHypotheque(bool b) {
-    this->hypotheque_ = b;
+    Joueur proprietaire = this->getProprietaire();
+    if (b == true) {
+        proprietaire.addArgent(this->getValeurHypotheque());
+        this->hypotheque_ = b;
+    }
+    else {
+        if (proprietaire.getSolde() >= this->getValeurHypotheque()) {
+            proprietaire.subArgent(this->getValeurHypotheque())
+            this->hypotheque_ = b;
+        }
+        else {
+            throw std::logic_error("Pas assez de fonds pour déshypothéquer");
+        }
+    }
+    
+}
+int CasePropriete::getValeurHypotheque() {
+    //Ne fait rien mais est redéfinie par chaque classe et est utilisée ici
 }

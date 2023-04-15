@@ -21,6 +21,7 @@ class CasePropriete : public Case {
         void getTypeCouleur();
         void setProprietaire(Joueur& proprietaire);
         void setHypotheque(bool b);
+        int getValeurHypotheque();
 
     private:
         std::string nom_;
