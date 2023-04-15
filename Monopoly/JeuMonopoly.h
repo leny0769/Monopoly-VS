@@ -12,6 +12,7 @@
 #include "GameState.h"
 #include <algorithm>
 #include <random>
+#include <list>
 
 
 using namespace std;
@@ -38,8 +39,8 @@ class JeuMonopoly {
         Plateau plateau_;
         Banque banque_;
         vector<Joueur> joueurs_;
-        CarteChance cartesChance_[16];
-        CarteCaisseDeCommunaute CarteCaisseDeCommunautes_[16];
+        list<CarteChance> cartesChance_[16];
+        list<CarteCaisseDeCommunaute> CarteCaisseDeCommunautes_[16];
         Langue langue_;
 };
 

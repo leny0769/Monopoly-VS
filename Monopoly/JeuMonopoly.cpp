@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+#include <list>
 #include "Joueur.h"
 #include "De.h"
 #include "Plateau.h"
@@ -39,14 +41,22 @@ using namespace std;
 	srand(time(NULL));
 	int rand = std::rand();
 	this->tourDuJoueur_ = rand % this.joueurs_.size();
+	vector<CarteChance> vecCartesChance;
+	vector<CarteCaisseDeCommunaute> vecCartesCaisseDeCommunaute;
+	vecCartesChance.resize(16);
+	vecCartesCaisseDeCommunaute.resize(16);
 	for (int i = 0; i < 16; i++) {
-		this->cartesChance_[i] = CarteChance(i);
-		this->cartesCaisseDeCommunautes_[i] = CarteCaisseDeCommunaute(i);
+		vecCartesChance[i] = CarteChance(i);
+		vecCartesCaisseDeCommunaute[i] = CarteCaisseDeCommunaute(i);
 	}
 	auto rng = std::default_random_engine{};
-	std::shuffle(std::begin(this.cartesChance_), std::end(this.cartesChance), rng);
-	std::shuffle(std::begin(this.cartesCaisseDeCommunautes_), std::end(this.cartesCaisseDeCommunautes_), rng);
-}*/
+	std::shuffle(std::begin(vecCartesChance), std::end(vecCartesChance), rng);
+	std::shuffle(std::begin(vecCartesCaisseDeCommunaute), std::end(vecCartesCaisseDeCommunaute), rng);
+	for (int i =0; i < 16; i++) {
+		this->cartesChance_.push_front(vecCartesChance[i]);
+		this->cartesCaisseDeCommunaute_.push_front(vecCartesCaisseDeCommunaute[i]);
+	}
+}
 
 int JeuMonopoly::getTourDuJoueur() {
 	return this->tourDuJoueur_;
