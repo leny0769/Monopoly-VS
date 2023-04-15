@@ -1,5 +1,5 @@
 #include <string>
-#include "Carte.h"
+#include "Case.h"
 #include "CarteCaisseDeCommunaute.h"
 
 using namespace std;
@@ -7,5 +7,7 @@ using namespace std;
 
 
 CaseCaisseDeCommunaute();
-CaseCaisseDeCommunaute(int position);
+CaseCaisseDeCommunaute(int position) {
+	Case(position);
+}
 

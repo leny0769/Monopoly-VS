@@ -7,7 +7,7 @@ using namespace std;
 
 
 CaseDepart();
-CaseDepart(int salaire, int position) {
+CaseDepart(int position, int salaire) {
     Case(position);
     this->salaire_ = salaire;
     }

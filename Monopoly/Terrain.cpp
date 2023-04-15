@@ -7,8 +7,8 @@ using namespace std;
 
 
 Terrain();
-Terrain(int loyer[5], string nom, int prix, int valeurHypotheque, string type_couleur, int position, Joueur proprietaire) {
-    CasePropriete(nom, prix, valeurHypotheque, type_couleur, position, proprietaire);
+Terrain(int position, int loyer[5], string nom, int prix, string type_couleur) {
+    CasePropriete(position,nom, prix, type_couleur);
     this->loyer_ = loyer;
     this->nombreMaison_ = 0;
 }

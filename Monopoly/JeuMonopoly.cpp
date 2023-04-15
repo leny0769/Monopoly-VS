@@ -7,7 +7,8 @@
 #include "CarteCaisseDeCommunaute.h"
 #include "Langue.h"
 #include <vector>
-
+#include <algorithm>
+#include <random>
 
 
 using namespace std;
@@ -18,18 +19,22 @@ JeuMonopoly(vector<Joueur> joueurs){
 	this.plateau_ = Plateau();
 	this.banque_ = Banque();
 	this.joueurs_ = joueurs;
-	this.cartesChances = ;
-	this.cartesCaisseDeCommunaute_ = ;
 	srand(time(NULL));
 	int rand = std::rand();
 	this->tourDuJoueur_ = rand % this.joueurs_.size();
+	for (int i = 0; i < 16; i++) {
+		this.cartesChance_[i] = CarteChance(i);
+		this.cartesCaisseDeCommunautes_[i] = CarteCaisseDeCommunaute(i);
+	}
+	auto rng = std::default_random_engine{};
+	std::shuffle(std::begin(this.cartesChance_), std::end(this.cartesChance), rng);
+	std::shuffle(std::begin(this.cartesCaisseDeCommunautes_), std::end(this.cartesCaisseDeCommunautes_), rng);
 
 int getTourDuJoueur() {
 	return this->tourDuJoueur_;
 }
 De getDes() {
 	return this->des_;
-
 }
 vector<Joueur> getJoueurs() {
 	return this->joueurs_;

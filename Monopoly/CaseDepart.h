@@ -10,7 +10,7 @@ using namespace std;
 class CaseDepart : public Case {
     public:
         CaseDepart();
-        CaseDepart(int salaire, int position);
+        CaseDepart(int position, int salaire);
         int getSalaire();
 
     private:

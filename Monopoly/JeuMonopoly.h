@@ -9,6 +9,8 @@
 #include "CarteChance.h"
 #include "CarteCaisseDeCommunaute.h"
 #include "Langue.h"
+#include <algorithm>
+#include <random>
 
 
 using namespace std;

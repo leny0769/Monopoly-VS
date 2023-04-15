@@ -10,10 +10,10 @@ using namespace std;
 class Gare : public CasePropriete {
     public:
         Gare();
-        Gare(int[4] loyer, string nom, int prix, int valeurHypotheque, string type_couleur, int position);
+        Gare(int position, int loyerGare[4], std::string nom, int prix, std::string type_couleur);
 
     private:
-        int[4] loyer_;
+        int[ loyer_[4];
 };
 
 #endif;

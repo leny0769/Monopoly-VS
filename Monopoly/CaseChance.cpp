@@ -7,4 +7,6 @@ using namespace std;
 
 
 CaseChance();
-CaseChance(int position);
+CaseChance(int position) {
+	Case(position);
+}

@@ -7,8 +7,8 @@ using namespace std;
 
 
 ServicePublic();
-ServicePublic(int[4] loyer, string nom, int prix, int valeurHypotheque, string type_couleur, int position, Joueur proprietaire) {
-    CasePropriete(nom, prix, valeurHypotheque,type_couleur, position, proprietaire);
+ServicePublic(int position, int loyer[4], std::string nom, int prix, std::string type_couleur) {
+    CasePropriete(position,nom, prix,type_couleur);
     this.loyer_ = loyer;
 }
 

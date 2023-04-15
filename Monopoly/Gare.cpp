@@ -6,7 +6,7 @@ using namespace std;
 
 
 Gare();
-Gare(int loyer[4], string nom, int prix, int valeurHypotheque, string type_couleur, int position, Joueur proprietaire) {
-    CasePorpriete(nom, prix, valeurHypotheque, type_couleur, position, proprietaire);
+Gare(int position,int loyerGare[4], std::string nom, int prix, std::string type_couleur) {
+    CasePropriete(position,nom, prix,type_couleur);
     this->loyer_ = loyer;
 }

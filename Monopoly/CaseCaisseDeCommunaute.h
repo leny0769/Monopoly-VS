@@ -2,7 +2,7 @@
 #define CASECAISSEDECOMMUNAUTE_H
 
 #include <string>
-#include "Carte.h"
+#include "Case.h"
 #include "CarteCaisseDeCommunaute.h"
 
 using namespace std;

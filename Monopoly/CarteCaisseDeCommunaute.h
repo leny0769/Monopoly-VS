@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Carte.h"
+#include <stdexcept>
 
 using namespace std;
 

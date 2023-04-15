@@ -2,7 +2,8 @@
 #define CASEPRISON_H
 
 #include <string>
-#include "Carte.h"
+#include "Case.h"
+
 
 using namespace std;
 
@@ -10,11 +11,11 @@ using namespace std;
 class CasePrison : public Case {
     public:
         CasePrison();
-        CasePrison(int prix, int position);
+        CasePrison(int position, int prixLiberation);
         void sortirPrison();
 
     private:
-        int prix_;
+        int prixLiberation_;
 };
 
 #endif;

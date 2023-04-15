@@ -4,18 +4,13 @@
 
 using namespace std;
 
-
-
 CasePropriete();
-CasePropriete(string nom, int prix, int valeurHypotheque, string type_couleur, int position, Joueur proprietaire)
-{
+CasePropriete(int position, std::string nom, int prix, std::string type_couleur) {
     Case(position);
     this->nom_ = nom;
     this->prix_ = prix;
-    this->valeurHypotheque_ = valeurHypotheque;
     this->type_couleur_ = type_couleur;
     this->hypotheque_ = false;
-    this->proprietaire_ = proprietaire;
 }
 int getPrix() {
     return this->prix_;
@@ -23,13 +18,13 @@ int getPrix() {
 Joueur getProprietaire() {
     return this->proprietaire_;
 }
-string getNom() {
+std::string getNom() {
     return this->nom_;
 }
 bool getHypotheque() {
     return this->hypotheque_;
 }
-string getTypeCouleur() {
+std::string getTypeCouleur() {
     return this->type_couleur_;
 }
 void setProprietaire(Joueur proprietaire) {

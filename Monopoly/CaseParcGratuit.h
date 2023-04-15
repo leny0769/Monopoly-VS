@@ -12,6 +12,7 @@ class CaseParcGratuit : public Case {
     public:
         CaseParcGratuit();
         CaseParcGratuit(int  position);
+        void ajouterArgent(int montant);
         void recupererArgent(Joueur joueur);
 
     private:

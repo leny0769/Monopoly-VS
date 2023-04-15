@@ -1,10 +1,11 @@
 #include <string>
-#include "Carte.h"
+#include "Case.h"
 
 using namespace std;
 
 
 CasePrison();
-CasePrison(int prix) {
-    this->prix_ = prix:
+CasePrison(int position,int prixLiberation) {
+    Case(position);
+    this->prixLiberation_ = prixLiberation:
 }
