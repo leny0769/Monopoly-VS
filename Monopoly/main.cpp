@@ -2,6 +2,8 @@
 //#include "JeuMonopoly.h"
 //#include "Joueur.h"
 #include <iostream> 
+#include "PlayerMenuState.h"
+#include "MainMenuState.h"
 
 int main()
 {
@@ -300,8 +302,19 @@ int main()
 		window.display();
 	}
 
+	GameState* currentState_;
+
+	currentState_ = new MainMenuState();
+	currentState_->afficherInterface();
+	currentState_->jouerMusique();
+
+	// Changer l'état du jeu pour la phase d'achat de propriétés
+	currentState_ = new PlayerMenuState();
+	currentState_->afficherInterface();
+	currentState_->jouerMusique();
 
 	/*JeuMonopoly Partie;
+	
 	while (Partie.isOngoing()) {
 		Joueur j = Partie.getJoueur();
 		Partie.jouerTour(j);

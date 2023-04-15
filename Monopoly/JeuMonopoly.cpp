@@ -10,8 +10,10 @@
 #include <algorithm>
 #include <random>
 #include "JeuMonopoly.h"
+#include "MainMenuState.h"
 
 using namespace std;
+
 
 /*JeuMonopoly::JeuMonopoly(vector<Joueur> joueurs) {
 	this.des_[1] = De();
@@ -93,8 +95,8 @@ void JeuMonopoly::jouerTour(Joueur j) {
 
 
 	//FAIRE EN SORTE QUE LE JOUEUR APPUIE SUR UN BOUTON POUR LANCER LES DES
-	/*int lance = 0;
-	for (De d : this.des_) {
+	int lance = 0;
+	/*for (De d : this.des_) {
 		d.lancerDe;
 		lance += d->getValeur;
 	}

@@ -25,6 +25,8 @@
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Case.cpp" />
     <ClCompile Include="CasePropriete.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="PlayerMenuState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Face1.png" />
@@ -48,12 +50,15 @@
     <ClInclude Include="CasePrison.h" />
     <ClInclude Include="CasePropriete.h" />
     <ClInclude Include="De.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Gare.h" />
     <ClInclude Include="JeuMonopoly.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="Langue.h" />
+    <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Pion.h" />
     <ClInclude Include="Plateau.h" />
+    <ClInclude Include="PlayerMenuState.h" />
     <ClInclude Include="ServicePublic.h" />
     <ClInclude Include="Terrain.h" />
   </ItemGroup>

@@ -9,6 +9,7 @@
 #include "CarteChance.h"
 #include "CarteCaisseDeCommunaute.h"
 #include "Langue.h"
+#include "GameState.h"
 #include <algorithm>
 #include <random>
 
