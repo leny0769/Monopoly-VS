@@ -3,7 +3,6 @@
 
 #include <string>
 #include "Case.h"
-#include "CarteCaisseDeCommunaute.h"
 
 using namespace std;
 

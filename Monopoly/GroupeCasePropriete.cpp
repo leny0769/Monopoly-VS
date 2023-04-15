@@ -1,26 +1,28 @@
 #include <string>
 #include "CasePropriete.h"
 #include "Joueur.h"
+#include <list>
+#include "GroupeCasePropriete.h"
 
 using namespace std;
 
-GroupeCasePropriete();
-GroupeCasePropriete(std::string couleur_ou_type){
-    this.couleur_ou_type = coueur_ou_type;
-
-void addProperty(CasePropriete* propriete) {
-    this.vecProprietes.push_back(propriete);
+GroupeCasePropriete::GroupeCasePropriete();
+GroupeCasePropriete::GroupeCasePropriete(std::string couleur_ou_type) {
+    this->couleur_ou_type = couleur_ou_type;
+}
+void GroupeCasePropriete::addProperty(CasePropriete propriete) {
+    this->listProprietes.push_back(propriete);
 }
 
-string getName() const override {
-    return couleur_ou_type_;
+std::string GroupeCasePropriete::getName() {
+    return this->couleur_ou_type_;
 }
 
-bool uniqueProprietaire() {
-    Joueur premierProp = this.vecProprietes[0].getProprietaire();
-    for (CasePropriete cp : this.vecProprietes)
+bool GroupeCasePropriete::uniqueProprietaire() {
+    Joueur premierProp = this->listProprietes[0].getProprietaire();
+    for (CasePropriete const& i : this->listProprietes)
     {
-        if (cp.getProprietaire() != premierProp) {
+        if (i.getProprietaire() != premierProp) {
             return false;
         }
     }

@@ -2,7 +2,8 @@
 #define DE_H
 
 #include <string>
-
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 

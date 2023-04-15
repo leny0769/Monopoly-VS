@@ -1,14 +1,14 @@
 #include <string>
-
+#include "Case.h"
 using namespace std;
 
 
 
-/*Case();
-Case(int position) {
+Case::Case();
+Case::Case(int position) {
     this->position_ = position;
 }
-int getPosition() {
-    return this.position_;
-}*/
+int Case::getPosition() {
+    return this->position_;
+}
 

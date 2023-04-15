@@ -1,16 +1,13 @@
 #include <string>
 #include "CasePropriete.h"
 #include "Joueur.h"
-
+#include "ServicePublic.h"
 using namespace std;
 
 
 
-ServicePublic();
-ServicePublic(int position, int loyer[4], std::string nom, int prix, std::string type_couleur) {
+ServicePublic::ServicePublic();
+ServicePublic::ServicePublic(int position, int loyer[4], std::string nom, int prix, std::string type_couleur) {
     CasePropriete(position,nom, prix,type_couleur);
-    this.loyer_ = loyer;
-}
-
-int getLoyer() {
+    this->loyer_ = loyer;
 }

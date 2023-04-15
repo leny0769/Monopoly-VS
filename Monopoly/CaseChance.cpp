@@ -1,12 +1,12 @@
 #include <string>
 #include <Case.h>
-#include <CarteChance.h>
+#include "CaseChance.h"
 
 using namespace std;
 
 
 
-CaseChance();
-CaseChance(int position) {
+CaseChance::CaseChance();
+CaseChance::CaseChance(int position) {
 	Case(position);
 }

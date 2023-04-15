@@ -16,17 +16,17 @@ using namespace std;
 
 
 /*JeuMonopoly::JeuMonopoly(vector<Joueur> joueurs) {
-	this.des_[1] = De();
-	this.des_[2] = De();
-	this.plateau_ = Plateau();
-	this.banque_ = Banque();
-	this.joueurs_ = joueurs;
+	this->des_[1] = De();
+	this->des_[2] = De();
+	this->plateau_ = Plateau();
+	this->banque_ = Banque();
+	this->joueurs_ = joueurs;
 	srand(time(NULL));
 	int rand = std::rand();
 	this->tourDuJoueur_ = rand % this.joueurs_.size();
 	for (int i = 0; i < 16; i++) {
-		this.cartesChance_[i] = CarteChance(i);
-		this.cartesCaisseDeCommunautes_[i] = CarteCaisseDeCommunaute(i);
+		this->cartesChance_[i] = CarteChance(i);
+		this->cartesCaisseDeCommunautes_[i] = CarteCaisseDeCommunaute(i);
 	}
 	auto rng = std::default_random_engine{};
 	std::shuffle(std::begin(this.cartesChance_), std::end(this.cartesChance), rng);

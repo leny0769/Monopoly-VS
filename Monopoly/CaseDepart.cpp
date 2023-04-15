@@ -1,16 +1,15 @@
 #include <string>
-#include "Carte.h"
 #include "Case.h"
-
+#include "CaseDepart.h"
 using namespace std;
 
 
 
-CaseDepart();
-CaseDepart(int position, int salaire) {
+CaseDepart::CaseDepart();
+CaseDepart::CaseDepart(int position, int salaire) {
     Case(position);
     this->salaire_ = salaire;
     }
-int getSalaire() {
-    return this.salaire_;
+int CaseDepart::getSalaire() {
+    return this->salaire_;
 }

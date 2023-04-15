@@ -4,7 +4,7 @@
 #include "Pion.h"
 #include <string>
 #include "CasePropriete.h"
-
+#include "Joueur.h"
 /*Joueur::Joueur() {
 
 }*/
@@ -54,10 +54,6 @@ void Joueur::setPosition(int position) {
 	if ((position >= 0) && (position < 40)) {
 		this->position_ = position;
 	}
-}
-
-void Joueur::incrementPosition() {
-	this->position_ = (this->getPosition() + 1) % 40;
 }
 
 void Joueur::setStatut(string statut) {

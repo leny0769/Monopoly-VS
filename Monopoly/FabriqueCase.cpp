@@ -10,12 +10,13 @@
 #include "ServicePublic.h"
 #include "Gare.h"
 #include "Terrain.h"
+#include "FabriqueCase.h"
 using namespace std;
 
 
 
-FabriqueCase();
-Case creerCase(std::string type, int position,int salaire = 0,int prixLiberation = 0, std::string nom = "", int prix = 0, std::string type_couleur = "", int* loyerTerrain[5] = nullptr, int taxe = 0, int loyerGareService[4] = nullptr) {
+FabriqueCase::FabriqueCase();
+Case FabriqueCase::creerCase(std::string type, int position,int salaire = 0,int prixLiberation = 0, std::string nom = "", int prix = 0, std::string type_couleur = "", int* loyerTerrain[5] = nullptr, int taxe = 0, int loyerGareService[4] = nullptr) {
 	if (type == "taxe") {
 		return CaseTaxe(position, taxe);
 	}

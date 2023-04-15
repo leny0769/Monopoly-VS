@@ -3,6 +3,7 @@
 
 #include <string>
 #include "CasePropriete.h"
+#include <list>
 
 using namespace std;
 
@@ -10,13 +11,13 @@ class GroupeCasePropriete : public CasePropriete {
     public:
         GroupeCasePropriete();
         GroupeCasePropriete(string couleur_ou_type);
-        void addProperty(CasePropriete* propriete);
+        void addProperty(CasePropriete propriete);
         string getName();
         bool uniqueProprietaire();
 
     private:
         std::string couleur_ou_type_;
-        std::vector<CasePropriete*> vecProprietes;
+        std::list<CasePropriete> listProprietes;
     };
 
 #endif

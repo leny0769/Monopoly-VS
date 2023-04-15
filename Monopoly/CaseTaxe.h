@@ -2,7 +2,6 @@
 #define CASETAXE_H
 
 #include <string>
-#include "Carte.h"
 #include "Case.h"
 using namespace std;
 

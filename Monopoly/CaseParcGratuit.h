@@ -2,7 +2,7 @@
 #define CASEPARCGRATUIT_H
 
 #include <string>
-#include "Carte.h"
+#include "Case.h"
 #include "Joueur.h"
 
 using namespace std;

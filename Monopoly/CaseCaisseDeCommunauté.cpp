@@ -1,13 +1,14 @@
 #include <string>
 #include "Case.h"
-#include "CarteCaisseDeCommunaute.h"
+#include "CaseCaisseDeCommunaute.h"
+
 
 using namespace std;
 
 
 
-CaseCaisseDeCommunaute();
-CaseCaisseDeCommunaute(int position) {
+CaseCaisseDeCommunaute::CaseCaisseDeCommunaute();
+CaseCaisseDeCommunaute::CaseCaisseDeCommunaute(int position) {
 	Case(position);
 }
 
