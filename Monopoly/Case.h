@@ -11,9 +11,11 @@ class Case {
         Case();
         Case(int position);
         int getPosition();
+        std::string getClass();
 
     private:
         int position_;
+        std::string class_;
         //PathImage image_;
 };
 

@@ -14,7 +14,7 @@ class Plateau {
     public:
         Plateau();
         Case getCase(int position);
-        vector<Case> getCase();
+        vector<Case> getCases();
 
     private:
         vector<Case> cases_;

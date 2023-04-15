@@ -12,7 +12,7 @@ class GroupeServicePublic : public ServicePublic {
 public:
     GroupeServicePublic();
     GroupeServicePublic(string couleur_ou_type);
-    void addProperty(ServicePublic propriete);
+    void addProperty(ServicePublic& propriete);
     string getName();
     int nombreServicePublicPossedees(Joueur j);
 

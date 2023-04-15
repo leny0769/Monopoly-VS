@@ -16,33 +16,33 @@ using namespace std;
 
 
 FabriqueCase::FabriqueCase();
-Case FabriqueCase::creerCase(std::string type, int position,int salaire = 0,int prixLiberation = 0, std::string nom = "", int prix = 0, std::string type_couleur = "", int* loyerTerrain[5] = nullptr, int taxe = 0, int loyerGareService[4] = nullptr) {
+Case FabriqueCase::creerCase(std::string type, int position, std::string classe,int salaire = 0,int prixLiberation = 0, std::string nom = "", int prix = 0, std::string type_couleur = "", int* loyerTerrain[5] = nullptr, int taxe = 0, int loyerGareService[4] = nullptr) {
 	if (type == "taxe") {
-		return CaseTaxe(position, taxe);
+		return CaseTaxe(position,classe, taxe);
 	}
 	if (type == "terrain") {
-		return Terrain(position, loyerTerrain, nom, prix, type_couleur);
+		return Terrain(position, classe,loyerTerrain, nom, prix, type_couleur);
 	}
 	if (type == "service") {
-		return ServicePublic(position, loyerGareService, nom,prix, type_couleur);
+		return ServicePublic(position, classe,loyerGareService, nom,prix, type_couleur);
 	}
 	if (type == "gare") {
-		return Gare(position, loyerGareService, nom, prix, type_couleur);
+		return Gare(position, classe, loyerGareService, nom, prix, type_couleur);
 	}
 	if (type == "prison") {
-		return CasePrison(position, prixLiberation);
+		return CasePrison(position,classe, prixLiberation);
 	}
 	if (type == "parc") {
-		return CaseParcGratuit(position);
+		return CaseParcGratuit(position,classe);
 	}
 	if (type == "depart") {
-		return CaseDepart(position, salaire);
+		return CaseDepart(position, classe,salaire);
 	}
 	if (type == "chance") {
-		return CaseChance(position);
+		return CaseChance(position,classe);
 	}
 	if (type == "commaunaute") {
-		return CaseCaisseDeCommunaute(position);
+		return CaseCaisseDeCommunaute(position,classe);
 	}
 }
 

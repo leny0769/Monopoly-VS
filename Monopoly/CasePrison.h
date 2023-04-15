@@ -11,7 +11,7 @@ using namespace std;
 class CasePrison : public Case {
     public:
         CasePrison();
-        CasePrison(int position, int prixLiberation);
+        CasePrison(int position, std::string classe, int prixLiberation);
         void sortirPrison();
 
     private:

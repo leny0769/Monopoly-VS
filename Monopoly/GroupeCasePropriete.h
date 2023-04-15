@@ -11,7 +11,7 @@ class GroupeCasePropriete : public CasePropriete {
     public:
         GroupeCasePropriete();
         GroupeCasePropriete(string couleur_ou_type);
-        void addProperty(CasePropriete propriete);
+        void addProperty(CasePropriete& propriete);
         string getName();
         bool uniqueProprietaire();
 

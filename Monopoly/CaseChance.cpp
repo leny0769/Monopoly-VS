@@ -7,6 +7,6 @@ using namespace std;
 
 
 CaseChance::CaseChance();
-CaseChance::CaseChance(int position) {
-	Case(position);
+CaseChance::CaseChance(int position, std::string classe) {
+	Case(position,classe);
 }

@@ -9,7 +9,7 @@ using namespace std;
 class CaseTaxe : public Case {
 public:
     CaseTaxe();
-    CaseTaxe(int position, int taxe);
+    CaseTaxe(int position, std::string classe, int taxe);
     int getTaxe();
 
 private:

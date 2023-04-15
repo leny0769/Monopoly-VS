@@ -12,7 +12,7 @@ class GroupeGare : public Gare {
 public:
     GroupeGare();
     GroupeGare(string couleur_ou_type);
-    void addProperty(Gare propriete);
+    void addProperty(Gare& propriete);
     string getName();
     int nombreGarePossedees(Joueur j);
 

@@ -30,7 +30,7 @@ int Joueur::getSolde() {
 	return this->argent_;
 }
 
-string Joueur::getNom() const {
+string Joueur::getNom(){
 	return this->nom_;
 }
 

@@ -7,8 +7,8 @@ using namespace std;
 
 
 Terrain::Terrain();
-Terrain::Terrain(int position, int loyer[5], string nom, int prix, string type_couleur) {
-    CasePropriete(position,nom, prix, type_couleur);
+Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int prix, string type_couleur) {
+    CasePropriete(position,classe,nom, prix, type_couleur);
     this->loyer_ = loyer;
     this->nombreMaison_ = 0;
 }

@@ -8,7 +8,7 @@ using namespace std;
 
 
 CaseCaisseDeCommunaute::CaseCaisseDeCommunaute();
-CaseCaisseDeCommunaute::CaseCaisseDeCommunaute(int position) {
-	Case(position);
+CaseCaisseDeCommunaute::CaseCaisseDeCommunaute(int position,std::string classe) {
+	Case(position,classe);
 }
 

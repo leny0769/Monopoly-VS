@@ -18,6 +18,6 @@ Case Plateau::getCase(int position) {
         return this->cases_[position];
     }
 }
-vector<Case> Plateau::getCase() {
+vector<Case> Plateau::getCases() {
     return this->cases_;
 }

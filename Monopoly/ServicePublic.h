@@ -11,7 +11,7 @@ using namespace std;
 class ServicePublic : public CasePropriete {
     public:
         ServicePublic();
-        ServicePublic(int position, int loyer[4], std::string nom, int prix, std::string type_couleur);
+        ServicePublic(int position, std::string classe, int loyer[4], std::string nom, int prix, std::string type_couleur);
 
     private:
         int[4] loyer_;

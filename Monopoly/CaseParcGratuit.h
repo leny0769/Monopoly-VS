@@ -11,9 +11,9 @@ using namespace std;
 class CaseParcGratuit : public Case {
     public:
         CaseParcGratuit();
-        CaseParcGratuit(int  position);
+        CaseParcGratuit(int  position, std::string classe);
         void ajouterArgent(int montant);
-        void recupererArgent(Joueur joueur);
+        void recupererArgent(Joueur& joueur);
 
     private:
         int argentStock_;

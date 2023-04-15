@@ -10,7 +10,7 @@ using namespace std;
 class CaseCaisseDeCommunaute : public Case {
     public:
         CaseCaisseDeCommunaute();
-        CaseCaisseDeCommunaute(int position);
+        CaseCaisseDeCommunaute(int position, std::string classe);
 
     private:
 };

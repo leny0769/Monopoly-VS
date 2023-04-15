@@ -19,7 +19,7 @@ using namespace std;
 
 class JeuMonopoly {
     public:
-        JeuMonopoly(vector<Joueur> joueurs);
+        JeuMonopoly(vector<Joueur>& joueurs);
         int getTourDuJoueur();
         De getDes();
         vector<Joueur> getJoueurs();
@@ -30,7 +30,7 @@ class JeuMonopoly {
         void getNextJoueur();
         bool isOngoing();
         Joueur getWinner();
-        void jouerTour(Joueur j);
+        void jouerTour(Joueur& j);
 
     private:
         int tourDuJoueur_;

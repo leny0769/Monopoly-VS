@@ -10,7 +10,7 @@ GroupeCasePropriete::GroupeCasePropriete();
 GroupeCasePropriete::GroupeCasePropriete(std::string couleur_ou_type) {
     this->couleur_ou_type = couleur_ou_type;
 }
-void GroupeCasePropriete::addProperty(CasePropriete propriete) {
+void GroupeCasePropriete::addProperty(CasePropriete& propriete) {
     this->listProprietes.push_back(propriete);
 }
 
@@ -19,7 +19,7 @@ std::string GroupeCasePropriete::getName() {
 }
 
 bool GroupeCasePropriete::uniqueProprietaire() {
-    Joueur premierProp = this->listProprietes[0].getProprietaire();
+    Joueur premierProp = this->listProprietes.front().getProprietaire();
     for (CasePropriete const& i : this->listProprietes)
     {
         if (i.getProprietaire() != premierProp) {

@@ -7,7 +7,7 @@ using namespace std;
 
 
 ServicePublic::ServicePublic();
-ServicePublic::ServicePublic(int position, int loyer[4], std::string nom, int prix, std::string type_couleur) {
-    CasePropriete(position,nom, prix,type_couleur);
+ServicePublic::ServicePublic(int position, std::string classe, int loyer[4], std::string nom, int prix, std::string type_couleur) {
+    CasePropriete(position,classe,nom, prix,type_couleur);
     this->loyer_ = loyer;
 }
