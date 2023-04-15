@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-De();
+/*De();
 int getValeur() {
     return this->valeur;
 }
@@ -15,4 +15,4 @@ void lancerDes() {
     int rand = std::rand();
     this->valeur = rand % 7;
 }
-void afficherResultat();
+void afficherResultat();*/

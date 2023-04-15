@@ -15,7 +15,7 @@ class Joueur {
 		Joueur();
 		Joueur(string nom, int argent, Pion pion);
 		int getSolde();
-		string getNom();
+		string getNom() const;
 		int getNbCarteSortiePrison();
 		int getNbTourPrison();
 		int getNbDoubles();
@@ -31,6 +31,7 @@ class Joueur {
 		int getPosition();
 		void setPosition(int position);
 		void incrementPosition();
+		bool operator==(const Joueur& j2) const;
 
     private:
         string nom_;

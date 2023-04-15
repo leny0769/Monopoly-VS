@@ -8,7 +8,7 @@
 using namespace std;
 
 
-class CasePropriete : public Case {
+/*class CasePropriete : public Case {
     public:
         CasePropriete();
         CasePropriete(int position, std::string nom, int prix, std::string type_couleur);
@@ -29,8 +29,8 @@ class CasePropriete : public Case {
         Joueur proprietaire_;
         bool hypotheque_;
         std::string type_couleur_;
-        int[5] loyer_;
+        //int[5] loyer_;
         int nombreMaisons_;
-};
+};*/
 
 #endif;

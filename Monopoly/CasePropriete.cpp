@@ -4,7 +4,7 @@
 
 using namespace std;
 
-CasePropriete();
+/*CasePropriete();
 CasePropriete(int position, std::string nom, int prix, std::string type_couleur) {
     Case(position);
     this->nom_ = nom;
@@ -32,4 +32,4 @@ void setProprietaire(Joueur proprietaire) {
 }
 void setHypotheque(bool b) {
     this->hypotheque_ = b;
-}
+}*/

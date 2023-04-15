@@ -30,7 +30,7 @@ int Joueur::getSolde() {
 	return this->argent_;
 }
 
-string Joueur::getNom() {
+string Joueur::getNom() const {
 	return this->nom_;
 }
 
@@ -105,7 +105,7 @@ bool Joueur::subArgent(int montant) {
 	argent_ -= montant;
 }
 
-bool  Joueur::operator==(const Joueur& j1, const Joueur& j2)
+bool Joueur::operator==(const Joueur& j2) const
 {
-	return (j1.getNom() == j2.getNom());
+	return (getNom() == j2.getNom());
 }

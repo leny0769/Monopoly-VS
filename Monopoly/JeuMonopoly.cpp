@@ -9,11 +9,11 @@
 #include <vector>
 #include <algorithm>
 #include <random>
-
+#include "JeuMonopoly.h"
 
 using namespace std;
 
-JeuMonopoly(vector<Joueur> joueurs){
+/*JeuMonopoly::JeuMonopoly(vector<Joueur> joueurs) {
 	this.des_[1] = De();
 	this.des_[2] = De();
 	this.plateau_ = Plateau();
@@ -29,34 +29,47 @@ JeuMonopoly(vector<Joueur> joueurs){
 	auto rng = std::default_random_engine{};
 	std::shuffle(std::begin(this.cartesChance_), std::end(this.cartesChance), rng);
 	std::shuffle(std::begin(this.cartesCaisseDeCommunautes_), std::end(this.cartesCaisseDeCommunautes_), rng);
+}*/
 
-int getTourDuJoueur() {
+int JeuMonopoly::getTourDuJoueur() {
 	return this->tourDuJoueur_;
 }
-De getDes() {
-	return this->des_;
+
+De JeuMonopoly::getDes() {
+	//return this->des_;
 }
-vector<Joueur> getJoueurs() {
+
+vector<Joueur> JeuMonopoly::getJoueurs() {
 	return this->joueurs_;
 }
-Joueur getJoueur() {
+
+Joueur JeuMonopoly::getJoueur() {
 	return this->joueurs_[this->tourDuJoueur_];
 }
 
-void commencerPartie();
-void finirPartie();
-void lancerDes();
+void JeuMonopoly::commencerPartie() {
 
-void getNextJoueur() {
-	this->tourDuJoueur_ = (this->tourDuJoueur_ + 1) % this->joueurs_.size;
 }
-bool isOngoing() {
+
+void JeuMonopoly::finirPartie() {
+
+}
+
+void JeuMonopoly::lancerDes() {
+
+}
+
+void JeuMonopoly::getNextJoueur() {
+	//this->tourDuJoueur_ = (this->tourDuJoueur_ + 1) % this->joueurs_.size;
+}
+
+bool JeuMonopoly::isOngoing() {
 	int joueurEnVie = 0;
-	for (Joueur j : this.joueurs_) {
-		if (j.getStatut == "playing") {
+	/*for (Joueur j : this.joueurs_) {
+		if (j.getStatut() == "playing") {
 			joueurEnVie += 1
 		}
-	}
+	}*/
 	if (joueurEnVie >= 2) {
 		return true;
 	}
@@ -64,32 +77,34 @@ bool isOngoing() {
 		return false;
 	}
 }
-Joueur getWinner() {
-	for (Joueur j : this.joueurs_) {
+
+Joueur JeuMonopoly::getWinner() {
+	/*for (Joueur j : this.joueurs_) {
 		if (j.getStatut == "playing") {
 			return j;
 		}
-	}
+	}*/
 }
-void jouerTour(Joueur j) {
+
+void JeuMonopoly::jouerTour(Joueur j) {
 	//PEUT CONSTRUIRE DES MAISONS
 	//PEUT PROCEDER A UN ECHANGE
 	//PEUT HYPOTHEQUER DES PROPRIETES
 
 
-        //FAIRE EN SORTE QUE LE JOUEUR APPUIE SUR UN BOUTON POUR LANCER LES DES
-        int lance = 0;
-        for (De d: this.des_) {
-            d.lancerDe;
-            lance += d->getValeur;
-        }
-        while (lance > 0) {
-            j.incrementPosition();
-            if (j.getPosition == 0) {
-                //DONNER LE SALAIRE DE LA CASE DEPART
-            }
-            j--;
-        }
+	//FAIRE EN SORTE QUE LE JOUEUR APPUIE SUR UN BOUTON POUR LANCER LES DES
+	/*int lance = 0;
+	for (De d : this.des_) {
+		d.lancerDe;
+		lance += d->getValeur;
+	}
+	while (lance > 0) {
+		j.incrementPosition();
+		if (j.getPosition == 0) {
+			//DONNER LE SALAIRE DE LA CASE DEPART
+		}
+		j--;
+	}*/
 
 	//PROPOSER D'ACHETER LA PROPRIETE SUR LAQUELLE IL TOMBE
 	//OU TIRER UNE CARTE ET JOUER SON EFFET
@@ -101,3 +116,4 @@ void jouerTour(Joueur j) {
 	//PEUT PROCEDER A UN ECHANGE
 	//PEUT HYPOTHEQUER DES PROPRIETES
 	//PEUT PASSER SON TOUR
+}
