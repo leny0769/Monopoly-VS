@@ -2,6 +2,7 @@
 #include "CasePropriete.h"
 #include "Joueur.h"
 #include "Terrain.h"
+#include "GroupeTerrain.h"
 using namespace std;
 
 
@@ -12,8 +13,15 @@ Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int
     this->loyer_ = loyer;
     this->nombreMaison_ = 0;
 }
+GroupeTerrain Terrain::getGroupeTerrain() {
+    return this->groupeTerrain_;
+}
 int Terrain::getLoyer() {
-    return this->loyer_[nombreMaison_]
+    int facteur = 1;
+    if (this->getGroupeTerrain().uniqueProprietaire()) {
+        facteur = 2
+    }
+    return this->loyer_[nombreMaison_] * facteur;
 }
 int Terrain::getValeurHypotheque() {
     int valHypotheque = (this->getPrix() * (1 + this->nombreMaison_ / 5)) / 2;
