@@ -2,7 +2,7 @@
 #define CASECHANCE_H
 
 #include <string>
-#include <Case.h>
+#include "Case.h"
 
 using namespace std;
 

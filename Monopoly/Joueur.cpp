@@ -5,11 +5,12 @@
 #include <string>
 #include "CasePropriete.h"
 #include "Joueur.h"
-/*Joueur::Joueur() {
 
-}*/
+Joueur::Joueur() {
 
-/*Joueur::Joueur(string nom, int argent, Pion pion)
+}
+
+Joueur::Joueur(string nom, int argent, Pion pion)
 {
 	this->argent_ = argent;
 	this->position_ = 0;
@@ -20,7 +21,7 @@
 	this->nombreDoubles_ = 0;
 	this->nombreTourPrison_ = 0;
 	this->statut_ = "playing";
-}*/
+}
 
 int Joueur::getPosition() {
 	return this->position_;
@@ -30,7 +31,7 @@ int Joueur::getSolde() {
 	return this->argent_;
 }
 
-string Joueur::getNom(){
+string Joueur::getNom() const {
 	return this->nom_;
 }
 

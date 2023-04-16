@@ -15,7 +15,7 @@ class Joueur {
 		Joueur();
 		Joueur(string nom, int argent, Pion pion);
 		int getSolde();
-		string getNom();
+		string getNom() const;
 		int getNbCarteSortiePrison();
 		int getNbTourPrison();
 		int getNbDoubles();

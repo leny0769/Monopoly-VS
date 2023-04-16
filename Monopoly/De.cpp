@@ -6,13 +6,20 @@ using namespace std;
 
 
 
-De::De();
+De::De() {
+
+}
+
 int De::getValeur() {
     return this->valeur;
 }
-void De::lancerDes() {
+
+void De::lancerDe() {
     srand(time(NULL));
     int rand = std::rand();
     this->valeur = rand % 7;
 }
-void De::afficherResultat();
+
+void De::afficherResultat() {
+
+}

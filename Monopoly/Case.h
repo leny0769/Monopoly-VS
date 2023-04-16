@@ -9,13 +9,13 @@ using namespace std;
 class Case {
     public:
         Case();
-        Case(int position);
+        Case(int position, string classe);
         int getPosition();
-        std::string getClass();
+        string getClass();
 
     private:
         int position_;
-        std::string class_;
+        string class_;
         //PathImage image_;
 };
 

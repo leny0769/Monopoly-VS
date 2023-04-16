@@ -20,3 +20,5 @@ private:
     std::string couleur_ou_type_;
     std::list<GroupeServicePublic> listServicePublic;
 };
+
+#endif

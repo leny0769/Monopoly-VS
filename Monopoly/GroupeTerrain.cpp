@@ -6,10 +6,14 @@
 
 using namespace std;
 
-GroupeTerrain::GroupeTerrain();
-GroupeTerrain::GroupeTerrain(std::string couleur_ou_type) {
-    this->couleur_ou_type = couleur_ou_type;
+GroupeTerrain::GroupeTerrain() {
+
 }
+
+GroupeTerrain::GroupeTerrain(std::string couleur_ou_type) {
+    this->couleur_ou_type_ = couleur_ou_type;
+}
+
 void GroupeTerrain::addProperty(CasePropriete& propriete) {
     this->listProprietes.push_back(propriete);
 }
@@ -22,9 +26,9 @@ bool GroupeTerrain::uniqueProprietaire() {
     Joueur premierProp = this->listProprietes.front().getProprietaire();
     for (CasePropriete const& i : this->listProprietes)
     {
-        if (i.getProprietaire() != premierProp) {
+        /*if (i.getProprietaire() != premierProp) {
             return false;
-        }
+        }*/
     }
     return true;
 }

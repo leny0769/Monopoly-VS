@@ -3,8 +3,12 @@
 using namespace std;
 
 
-Carte::Carte();
-Carte::Carte(int id) {
-        this->id_ = id;
+Carte::Carte() {
 }
-void Carte::afficherCarte();
+
+Carte::Carte(int id) {
+	this->id_ = id;
+}
+
+void Carte::afficherCarte() {
+}

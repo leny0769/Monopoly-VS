@@ -6,7 +6,10 @@
 using namespace std;
 
 
-CarteCaisseDeCommunaute::CarteCaisseDeCommunaute();
+CarteCaisseDeCommunaute::CarteCaisseDeCommunaute() {
+
+}
+
 CarteCaisseDeCommunaute::CarteCaisseDeCommunaute(int id) {
 	Carte(id);
 	if (id == 0) {

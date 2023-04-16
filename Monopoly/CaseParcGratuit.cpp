@@ -6,7 +6,10 @@ using namespace std;
 
 
 
-CaseParcGratuit::CaseParcGratuit();
+CaseParcGratuit::CaseParcGratuit() {
+
+}
+
 CaseParcGratuit::CaseParcGratuit(int  position, std::string classe) {
      Case(position,classe);
      this->argentStock_ = 0;
@@ -17,6 +20,6 @@ void CaseParcGratuit::ajouterArgent(int montant) {
 }
 
 void CaseParcGratuit::recupererArgent(Joueur& joueur) {
-    joueur.addArgent(this.argentStock_);
+    joueur.addArgent(this->argentStock_);
     this->argentStock_ = 0;
 }

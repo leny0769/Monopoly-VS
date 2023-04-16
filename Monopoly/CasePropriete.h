@@ -4,6 +4,7 @@
 #include <string>
 #include "Joueur.h"
 #include "Case.h"
+
 using namespace std;
 
 
@@ -14,11 +15,10 @@ class CasePropriete : public Case {
         bool getSansProprietaire();
         int getPrix();
         bool getHypotheque();
-        void setProprietaire(Joueur proprietaire);
         Joueur getProprietaire();
         std::string getNom();
         bool getHypotheque();
-        void getTypeCouleur();
+        std::string getTypeCouleur();
         void setProprietaire(Joueur& proprietaire);
         void setHypotheque(bool b);
         int getValeurHypotheque();

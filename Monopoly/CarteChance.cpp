@@ -5,7 +5,10 @@
 using namespace std;
 
 
-CarteChance::CarteChance();
+CarteChance::CarteChance() {
+
+}
+
 CarteChance::CarteChance(int id) {
     Carte(id);
     if (id == 0) {
@@ -27,7 +30,7 @@ CarteChance::CarteChance(int id) {
         this->description_ = "Avancez jusqu’à la Gare de Lyon. Si vous passez par la case départ, recevez 200 M";
     }
     if (id == 6) {
-        this->description = "Vous avez gagné le prix de mots croisés. Recevez 100 M";
+        this->description_ = "Vous avez gagné le prix de mots croisés. Recevez 100 M";
     }
     if (id == 7) {
         this->description_ = "La banque vous verse un dividende de 50 M";
@@ -51,7 +54,7 @@ CarteChance::CarteChance(int id) {
         this->description_ = "Payez pour frais de scolarité 15 M";
     }
     if (id == 14) {
-        this->description_ "Amende pour ivresse 20 M";
+        this->description_ = "Amende pour ivresse 20 M";
     }
     if (id == 15) {
         this->description_ = "Votre immeuble et votre prêt rapportent. Vous devez toucher 150 M";
