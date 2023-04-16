@@ -2,12 +2,13 @@
 #define MAINMENUSTATE_H
 
 #include "GameState.h"
-#include <iostream> 
+#include <iostream>
+#include <SFML/Graphics.hpp>
 
 class MainMenuState : public GameState
 {
 	public :
-        void afficherInterface() override;
+        int afficherInterface(sf::RenderWindow& window, sf::Font monopolyFont, int nbPlayer) override;
         void jouerMusique() override;
 };
 

@@ -3,12 +3,13 @@
 
 #include "GameState.h"
 #include <iostream> 
+#include <SFML/Graphics.hpp>
 
 class PlayerMenuState : public GameState
 {
-public:
-    void afficherInterface() override;
-    void jouerMusique() override;
+    public:
+        int afficherInterface(sf::RenderWindow& window, sf::Font monopolyFont, int nbPlayer) override;
+        void jouerMusique() override;
 };
 
 #endif;
