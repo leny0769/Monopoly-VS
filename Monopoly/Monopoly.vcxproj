@@ -23,14 +23,7 @@
     <ClCompile Include="CarteCaisseDeCommunaute.cpp" />
     <ClCompile Include="CarteChance.cpp" />
     <ClCompile Include="Case.cpp" />
-    <ClCompile Include="CaseAllerPrison.cpp" />
-    <ClCompile Include="CaseCaisseDeCommunauté.cpp" />
-    <ClCompile Include="CaseChance.cpp" />
-    <ClCompile Include="CaseDepart.cpp" />
-    <ClCompile Include="CaseParcGratuit.cpp" />
-    <ClCompile Include="CasePrison.cpp" />
     <ClCompile Include="CasePropriete.cpp" />
-    <ClCompile Include="CaseTaxe.cpp" />
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gare.cpp" />

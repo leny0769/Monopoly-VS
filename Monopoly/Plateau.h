@@ -17,8 +17,8 @@ class Plateau {
         vector<std::unique_ptr<Case>> getCases();
 
     private:
-        vector<std::unique_ptr<Case>> cases_;
-        //vector<Case> cases_;
+        //vector<std::unique_ptr<Case>> cases_;
+        vector<Case*> cases_;
         unordered_map<std::string, int> nombrePropriete_;
 };
 

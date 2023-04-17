@@ -14,12 +14,12 @@ class CasePropriete : public Case {
         CasePropriete();
         CasePropriete(int position, std::string classe, std::string nom, int prix, std::string type_couleur);
         bool getSansProprietaire();
-        int getPrix();
+        int getPrix() override;
         bool getHypotheque();
         Joueur getProprietaire();
         std::string getNom();
         std::string getTypeCouleur();
-        void setProprietaire(Joueur& proprietaire);
+        void setProprietaire(Joueur& proprietaire) override;
         void setHypotheque(bool b);
         int getValeurHypotheque();
 
