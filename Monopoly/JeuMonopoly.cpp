@@ -32,7 +32,8 @@
 using namespace std;
 
 
-/*JeuMonopoly::JeuMonopoly(vector<Joueur>& joueurs) {
+JeuMonopoly::JeuMonopoly(vector<Joueur>& joueurs) {
+	this->des_.resize(2);
 	this->des_[1] = De();
 	this->des_[2] = De();
 	this->plateau_ = Plateau();
@@ -40,7 +41,7 @@ using namespace std;
 	this->joueurs_ = joueurs;
 	srand(time(NULL));
 	int rand = std::rand();
-	this->tourDuJoueur_ = rand % this.joueurs_.size();
+	this->tourDuJoueur_ = rand % this->joueurs_.size();
 	vector<CarteChance> vecCartesChance;
 	vector<CarteCaisseDeCommunaute> vecCartesCaisseDeCommunaute;
 	vecCartesChance.resize(16);
@@ -53,8 +54,8 @@ using namespace std;
 	std::shuffle(std::begin(vecCartesChance), std::end(vecCartesChance), rng);
 	std::shuffle(std::begin(vecCartesCaisseDeCommunaute), std::end(vecCartesCaisseDeCommunaute), rng);
 	for (int i =0; i < 16; i++) {
-		this->cartesChance_.push_front(vecCartesChance[i]);
-		this->cartesCaisseDeCommunaute_.push_front(vecCartesCaisseDeCommunaute[i]);
+		this->cartesChance_->push_front(vecCartesChance[i]);
+		this->cartesCaisseDeCommunautes_->push_front(vecCartesCaisseDeCommunaute[i]);
 	}
 }
 
@@ -62,8 +63,8 @@ int JeuMonopoly::getTourDuJoueur() {
 	return this->tourDuJoueur_;
 }
 
-De JeuMonopoly::getDes() {
-	//return this->des_;
+vector<De> JeuMonopoly::getDes() {
+	return this->des_;
 }
 
 vector<Joueur> JeuMonopoly::getJoueurs() {
@@ -87,16 +88,16 @@ void JeuMonopoly::lancerDes() {
 }
 
 void JeuMonopoly::getNextJoueur() {
-	//this->tourDuJoueur_ = (this->tourDuJoueur_ + 1) % this->joueurs_.size;
-}*/
+	this->tourDuJoueur_ = (this->tourDuJoueur_ + 1) % this->joueurs_.size();
+}
 
 bool JeuMonopoly::isOngoing() {
 	int joueurEnVie = 0;
-	/*for (Joueur j : this.joueurs_) {
+	for (Joueur j : this->joueurs_) {
 		if (j.getStatut() == "playing") {
-			joueurEnVie += 1
+			joueurEnVie += 1;
 		}
-	}*/
+	}
 	if (joueurEnVie >= 2) {
 		return true;
 	}
@@ -106,11 +107,11 @@ bool JeuMonopoly::isOngoing() {
 }
 
 Joueur JeuMonopoly::getWinner() {
-	/*for (Joueur j : this.joueurs_) {
-		if (j.getStatut == "playing") {
+	for (Joueur j : this->joueurs_) {
+		if (j.getStatut() == "playing") {
 			return j;
 		}
-	}*/
+	}
 }
 
 void JeuMonopoly::jouerTour(Joueur& j) {
@@ -133,7 +134,7 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 	}
 	else {
 		if (j.getPosition() + lance >= 40) {
-			//CaseDepart caseDepart = plateau_.getCase(0);
+			//CaseDepart caseDepart = *plateau_.getCase(0);
 			//j.addArgent(caseDepart.getSalaire());
 		}
 		

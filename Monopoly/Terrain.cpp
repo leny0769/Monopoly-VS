@@ -12,7 +12,9 @@ Terrain::Terrain() {
 
 Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int prix, string type_couleur) {
     CasePropriete(position,classe,nom, prix, type_couleur);
-    //this->loyer_ = loyer;
+    for (int i = 0; i < 5; i++) {
+        this->loyer_[i] = loyer[i];
+    }
     this->nombreMaison_ = 0;
 }
 

@@ -7,7 +7,7 @@
 #include "Joueur.h"
 
 using namespace std;
-
+class Gare;
 class GroupeGare : public Gare {
 public:
     GroupeGare();

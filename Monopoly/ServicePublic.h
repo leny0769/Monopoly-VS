@@ -8,7 +8,7 @@
 
 using namespace std;
 
-
+class GroupeServicePublic;
 class ServicePublic : public CasePropriete {
     public:
         ServicePublic();
@@ -22,4 +22,4 @@ class ServicePublic : public CasePropriete {
         GroupeServicePublic groupeServicePublic_;
 };
 
-#endif;
+#endif

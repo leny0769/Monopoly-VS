@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <random>
 #include <list>
+#include <vector>
 
 
 using namespace std;
@@ -22,7 +23,7 @@ class JeuMonopoly {
     public:
         JeuMonopoly(vector<Joueur>& joueurs);
         int getTourDuJoueur();
-        De getDes();
+        vector<De> getDes();
         vector<Joueur> getJoueurs();
         Joueur getJoueur();
         void commencerPartie();
@@ -35,12 +36,12 @@ class JeuMonopoly {
 
     private:
         int tourDuJoueur_;
-        De des_[2];
+        vector<De> des_;
         Plateau plateau_;
         Banque banque_;
         vector<Joueur> joueurs_;
         list<CarteChance> cartesChance_[16];
-        list<CarteCaisseDeCommunaute> CarteCaisseDeCommunautes_[16];
+        list<CarteCaisseDeCommunaute> cartesCaisseDeCommunautes_[16];
         Langue langue_;
 };
 

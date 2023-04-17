@@ -7,7 +7,7 @@
 #include "Joueur.h"
 
 using namespace std;
-
+class ServicePublic;
 class GroupeServicePublic : public ServicePublic {
 public:
     GroupeServicePublic();
@@ -18,7 +18,7 @@ public:
 
 private:
     std::string couleur_ou_type_;
-    std::list<GroupeServicePublic> listServicePublic;
+    std::list<ServicePublic> listServicePublic;
 };
 
 #endif

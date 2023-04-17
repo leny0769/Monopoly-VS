@@ -6,7 +6,6 @@
 #include "GroupeGare.h"
 using namespace std;
 
-
 class Gare : public CasePropriete {
     public:
         Gare();

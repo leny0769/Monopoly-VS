@@ -15,7 +15,7 @@ GroupeServicePublic::GroupeServicePublic(string couleur_ou_type) {
 }
 
 void GroupeServicePublic::addProperty(ServicePublic& propriete) {
-	//this->listServicePublic.push_back(propriete);
+	this->listServicePublic.push_back(propriete);
 }
 
 string GroupeServicePublic::getName() {

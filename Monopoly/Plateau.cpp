@@ -5,6 +5,7 @@
 #include "Case.h"
 #include "FabriqueCase.h"
 #include "Plateau.h"
+#include <memory>
 using namespace std;
 
 
@@ -14,12 +15,12 @@ Plateau::Plateau() {
     //this->cases_[0] = fabrique.creerCase("depart", 0, salaire = 200);
 }
 
-Case Plateau::getCase(int position) {
+Case* Plateau::getCase(int position) {
     if ((position >= 0) && (position < this->cases_.size())) {
-        return this->cases_[position];
+        return this->cases_[position].get();
     }
 }
 
-vector<Case> Plateau::getCases() {
+vector<std::unique_ptr<Case>> Plateau::getCases() {
     return this->cases_;
 }

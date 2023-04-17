@@ -2,10 +2,10 @@
 #define PLATEAU_H
 
 #include <string>
-#include "Carte.h"
 #include <unordered_map>
 #include <vector>
 #include "Case.h"
+#include <memory>
 
 using namespace std;
 
@@ -13,11 +13,12 @@ using namespace std;
 class Plateau {
     public:
         Plateau();
-        Case getCase(int position);
-        vector<Case> getCases();
+        Case* getCase(int position);
+        vector<std::unique_ptr<Case>> getCases();
 
     private:
-        vector<Case> cases_;
+        vector<std::unique_ptr<Case>> cases_;
+        //vector<Case> cases_;
         unordered_map<std::string, int> nombrePropriete_;
 };
 

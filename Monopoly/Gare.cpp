@@ -12,7 +12,9 @@ Gare::Gare() {
 
 Gare::Gare(int position, std::string classe,int loyerGare[4], std::string nom, int prix, std::string type_couleur) {
     CasePropriete(position,classe,nom, prix,type_couleur);
-    //this->loyer_ = loyerGare;
+    for (int i = 0; i < 4; i++) {
+        this->loyer_[i] = loyerGare[i];
+    }
 }
 
 GroupeGare Gare::getGroupeGare() {
