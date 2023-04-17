@@ -111,6 +111,13 @@ bool Joueur::operator==(const Joueur& j2) const
 	return (getNom() == j2.getNom());
 }
 
-void Joueur::doitHypothéquer() {
-
+void Joueur::doitHypothéquer(int soldeMin) {
+	while (this->getSolde() < soldeMin) {
+		cout << "VOTRE SOLDE EST : " << this->getSolde() << " M \n VOUS DEVEZ AVOIR : " << soldeMin << " M POUR VOUS ACQUITTER DE VOS DETTES \n";
+		//print liste prop avec nom, pvaleurhypotheque
+		cout << "ENTRER LE NOM D'UNE PROPRIETE A HYPOTHEQUER";
+		string input;
+		std::getline(std::cin, input);
+		//boucle sur les prop
+	}
 }
