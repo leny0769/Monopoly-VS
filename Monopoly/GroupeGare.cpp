@@ -24,10 +24,10 @@ string GroupeGare::getName() {
 
 int GroupeGare::nombreGarePossedees(Joueur j) {
 	int nbGares = 0;
-	for (Gare const& i : this->listGare) {
-		/*if (i.getProprietaire() == j) {
+	/*for (Gare const& i : this->listGare) {
+		if (i.getProprietaire() == j) {
 			nbGares++;
-		}*/
-	}
+		}
+	}*/
 	return nbGares;
 }

@@ -67,5 +67,6 @@ void CasePropriete::setHypotheque(bool b) {
 }
 
 int CasePropriete::getValeurHypotheque() {
+    return 0;
     //Ne fait rien mais est redéfinie par chaque classe et est utilisée ici
 }
