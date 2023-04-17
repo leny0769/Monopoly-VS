@@ -140,16 +140,16 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 		
 		j.setPosition((j.getPosition() + lance) % 40);
 
-		//Case caseArrivee = this->plateau_.getCase(j);
-		/*if ((caseArrivee.getClass() == "Gare") || (caseArrivee.getClass() == "ServicePublic") || (caseArrivee.getClass() == "Terrain")) {
-			//CasePropriete caseAchetable = this->plateau_.getCase(j.getPosition);
+		auto& caseArrivee = *(this->plateau_.getCase(j.getPosition()));
+		if ((caseArrivee.getClass() == "Gare") || (caseArrivee.getClass() == "ServicePublic") || (caseArrivee.getClass() == "Terrain")) {
+			//CasePropriete caseAchetable = *(this->plateau_.getCase(j.getPosition()));
 			//PROPOSER AU JOUEUR D'ACHETER LA CASE
 			//VERIFIER S'IL POSSEDE ASSEZ D'ARGENT
 			bool acheterCase = true; // s'il veut acheter la case on met le booléen à vrai, MIS A VRAI DE BASE POUR PAS QUE CA BUG
 			if (acheterCase) {
-				if (j.getSolde() >= caseAchetable.getPrix()) {
-					caseAchetable.setProprietaire(j);
-					j.subArgent(caseAchetable.getPrix());
+				if (j.getSolde() >= caseArrivee.getPrix()) {
+					caseArrivee.setProprietaire(j);
+					j.subArgent(caseArrivee.getPrix());
 					//AJOUTER LA PROPRIETE A CELLES DU JOUEUR
 				}
 				else {
@@ -157,7 +157,7 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 				}
 			}
 		}
-		if (caseArrivee.getClass() == "CaseCarteChance") {
+		/*if (caseArrivee.getClass() == "CaseCarteChance") {
 			//Tirer une carte chance
 		}
 		if (caseArrivee.getClass() == "CaseCarteCaisseDeCommunaute") {

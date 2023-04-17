@@ -17,7 +17,7 @@ Plateau::Plateau() {
 
 Case* Plateau::getCase(int position) {
     if ((position >= 0) && (position < this->cases_.size())) {
-        return this->cases_[position].get();
+        return cases_[position];
     }
 }
 
