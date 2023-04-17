@@ -19,11 +19,33 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Carte.cpp" />
+    <ClCompile Include="CarteCaisseDeCommunaute.cpp" />
+    <ClCompile Include="CarteChance.cpp" />
+    <ClCompile Include="Case.cpp" />
+    <ClCompile Include="CaseAllerPrison.cpp" />
+    <ClCompile Include="CaseCaisseDeCommunauté.cpp" />
+    <ClCompile Include="CaseChance.cpp" />
+    <ClCompile Include="CaseDepart.cpp" />
+    <ClCompile Include="CaseParcGratuit.cpp" />
+    <ClCompile Include="CasePrison.cpp" />
+    <ClCompile Include="CasePropriete.cpp" />
+    <ClCompile Include="CaseTaxe.cpp" />
+    <ClCompile Include="De.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Gare.cpp" />
+    <ClCompile Include="GroupeGare.cpp" />
+    <ClCompile Include="GroupeServicePublic.cpp" />
+    <ClCompile Include="GroupeTerrain.cpp" />
     <ClCompile Include="InGameState.cpp" />
+    <ClCompile Include="JeuMonopoly.cpp" />
+    <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="Plateau.cpp" />
     <ClCompile Include="PlayerMenuState.cpp" />
+    <ClCompile Include="ServicePublic.cpp" />
+    <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Face1.png" />

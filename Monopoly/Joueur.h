@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <iostream>
 #include "Pion.h"
-#include "CasePropriete.h"
+//#include "CasePropriete.h"
 
 using namespace std;
 
@@ -13,7 +13,7 @@ using namespace std;
 class Joueur {
     public:
 		Joueur();
-		Joueur(string nom, int argent, Pion pion);
+		Joueur(string nom, int argent);
 		int getSolde();
 		string getNom() const;
 		int getNbCarteSortiePrison();
@@ -36,7 +36,7 @@ class Joueur {
         string nom_;
         int argent_;
         //unordered_map<std::string, CasePropriete[]> proprietes_;
-        Pion pion_;
+        //Pion pion_;
         int position_;
         int carteSortiePrison_;
         bool prison_;

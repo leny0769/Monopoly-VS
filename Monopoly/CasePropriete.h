@@ -4,11 +4,12 @@
 #include <string>
 #include "Joueur.h"
 #include "Case.h"
+#include "Joueur.h"
 
 using namespace std;
 
-
 class CasePropriete : public Case {
+
     public:
         CasePropriete();
         CasePropriete(int position, std::string classe, std::string nom, int prix, std::string type_couleur);
@@ -17,7 +18,6 @@ class CasePropriete : public Case {
         bool getHypotheque();
         Joueur getProprietaire();
         std::string getNom();
-        bool getHypotheque();
         std::string getTypeCouleur();
         void setProprietaire(Joueur& proprietaire);
         void setHypotheque(bool b);

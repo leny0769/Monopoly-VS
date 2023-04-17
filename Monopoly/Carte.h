@@ -12,7 +12,7 @@ class Carte {
         Carte(int id);
         void afficherCarte();
 
-    private:
+    protected:
         string description_;
         int id_;
 };

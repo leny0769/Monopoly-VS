@@ -1,7 +1,8 @@
-﻿  InGameState.cpp
+﻿  JeuMonopoly.cpp
+C:\Users\LMT\Desktop\Monopoly\Monopoly-VS\Monopoly\JeuMonopoly.cpp(42,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
   Génération de code en cours
-  2 of 175 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  27 of 221 functions (12.2%) were compiled, the rest were copied from previous compilation.
+    17 functions were new in current compilation
+    30 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   Monopoly.vcxproj -> C:\Users\LMT\Desktop\Monopoly\Monopoly-VS\Release\Monopoly.exe

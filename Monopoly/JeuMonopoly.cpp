@@ -37,7 +37,7 @@ JeuMonopoly::JeuMonopoly(vector<Joueur>& joueurs) {
 	this->des_[1] = De();
 	this->des_[2] = De();
 	this->plateau_ = Plateau();
-	this->banque_ = Banque();
+	//this->banque_ = Banque();
 	this->joueurs_ = joueurs;
 	srand(time(NULL));
 	int rand = std::rand();

@@ -14,7 +14,7 @@ GroupeGare::GroupeGare(string couleur_ou_type) {
 	this->couleur_ou_type_ = couleur_ou_type;
 }
 
-void GroupeGare::addProperty(Gare& propriete) {
+void GroupeGare::addProperty(Gare* propriete) {
 	this->listGare.push_back(propriete);
 }
 
@@ -24,8 +24,9 @@ string GroupeGare::getName() {
 
 int GroupeGare::nombreGarePossedees(Joueur j) {
 	int nbGares = 0;
-	/*for (Gare const& i : this->listGare) {
-		if (i.getProprietaire() == j) {
+	std::list<Gare*> listGare = this->listGare;
+	for (Gare* const& i : listGare) {
+		/*if (i.getProprietaire() == j) {
 			nbGares++;
 		}
 	}*/

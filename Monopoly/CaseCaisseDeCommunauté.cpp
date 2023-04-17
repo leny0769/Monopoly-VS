@@ -8,7 +8,6 @@ CaseCaisseDeCommunaute::CaseCaisseDeCommunaute() {
 
 }
 
-CaseCaisseDeCommunaute::CaseCaisseDeCommunaute(int position,std::string classe) {
-	Case(position,classe);
+CaseCaisseDeCommunaute::CaseCaisseDeCommunaute(int position,std::string classe) : Case(position, classe) {
 }
 
