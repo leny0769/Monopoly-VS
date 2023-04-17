@@ -62,3 +62,7 @@ CarteChance::CarteChance(int id) : Carte(id) {
         throw std::invalid_argument("Carte non existante");
     }
  }
+
+string CarteChance::getDescription() {
+    return this->description_;
+}

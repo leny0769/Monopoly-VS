@@ -12,6 +12,7 @@ class CarteChance : public Carte {
     public:
         CarteChance();
         CarteChance(int id);
+        string getDescription();
 
     private:
         int id_;

@@ -26,9 +26,9 @@ int GroupeGare::nombreGarePossedees(Joueur j) {
 	int nbGares = 0;
 	std::list<Gare*> listGare = this->listGare;
 	for (Gare* const& i : listGare) {
-		/*if (i.getProprietaire() == j) {
+		if (i->getProprietaire() == j) {
 			nbGares++;
 		}
-	}*/
+	}
 	return nbGares;
 }

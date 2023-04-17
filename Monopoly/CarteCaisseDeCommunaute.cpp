@@ -63,3 +63,7 @@ CarteCaisseDeCommunaute::CarteCaisseDeCommunaute(int id) : Carte(id) {
 		throw std::invalid_argument("Carte non existante");
 	}
 }
+
+string CarteCaisseDeCommunaute::getDescription() {
+	return this->description_;
+}

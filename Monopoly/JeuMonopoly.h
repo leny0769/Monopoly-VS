@@ -33,8 +33,13 @@ class JeuMonopoly {
         bool isOngoing();
         Joueur getWinner();
         void jouerTour(Joueur& j);
+        void tirerCarteChance(Joueur& j);
+        void tirerCarteCaisseDeCommunaute(Joueur& j);
+        int getSalaire();
+        int getNbJoueurEnVie();
 
     private:
+        int salaire_;
         int tourDuJoueur_;
         vector<De> des_;
         Plateau plateau_;

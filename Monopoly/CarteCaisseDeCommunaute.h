@@ -12,6 +12,7 @@ class CarteCaisseDeCommunaute : public Carte {
     public:
         CarteCaisseDeCommunaute();
         CarteCaisseDeCommunaute(int id);
+        string getDescription();
 
     private:
         int id_;

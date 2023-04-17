@@ -10,6 +10,7 @@ class Carte {
     public:
         Carte();
         Carte(int id);
+        int getID();
         void afficherCarte();
 
     protected:
