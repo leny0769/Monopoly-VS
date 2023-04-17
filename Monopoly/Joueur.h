@@ -14,6 +14,7 @@ class Joueur {
     public:
 		Joueur();
 		Joueur(string nom, int argent);
+		bool isEnPrison();
 		int getSolde();
 		string getNom() const;
 		int getNbCarteSortiePrison();

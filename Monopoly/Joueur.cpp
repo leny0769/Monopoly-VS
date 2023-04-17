@@ -35,6 +35,10 @@ string Joueur::getNom() const {
 	return this->nom_;
 }
 
+bool Joueur::isEnPrison() {
+	return this->prison_;
+}
+
 int Joueur::getNbCarteSortiePrison() {
 	return this->carteSortiePrison_;
 }

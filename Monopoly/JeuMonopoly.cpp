@@ -212,14 +212,14 @@ void JeuMonopoly::tirerCarteCaisseDeCommunaute(Joueur& j) {
 	if (id == 12) {
 		bool incorrectInput = true;
 		while (incorrectInput) {
-			string str;
+			string input;
 			cout << "ENTRER PAYER OU TIRER";
-			std::getline(std::cin, str);
-			if (str == "PAYER") {
+			std::getline(std::cin, input);
+			if (input == "PAYER") {
 				j.subArgent(10);
 				incorrectInput = false;
 			}
-			if (str == "TIRER") {
+			if (input == "TIRER") {
 				incorrectInput = false;
 				tirerCarteChance(j);
 			}
@@ -298,77 +298,128 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 
 	//FAIRE EN SORTE QUE LE JOUEUR APPUIE SUR UN BOUTON POUR LANCER LES DES
 	int lance = 0;
-	for (De d : this->des_) {
-		d.lancerDe();
-		lance += d.getValeur();
-	}
-	if (this->des_[0].getValeur() == this->des_[1].getValeur()) {
-		j.setNbDouble(j.getNbDoubles() + 1);
-	}
-	if (j.getNbDoubles() == 3) {
-		j.allerEnPrison();
-	}
-	else {
-		if (j.getPosition() + lance >= 40) {
-			//CaseDepart caseDepart = *plateau_.getCase(0);
-			//j.addArgent(caseDepart.getSalaire());
+	bool tirerDes = true;
+	if (j.isEnPrison()) {
+		if (j.getNbTourPrison() < 3) {
+			if (j.getNbCarteSortiePrison() > 0) {
+				cout << "VOUS AVEZ UNE CARTE SORTIE DE PRISON, L'UTILISER ? (OUI/NON)";
+				string input1;
+				std::getline(std::cin, input1);
+				if (input1 == "OUI") {
+					j.setEnPrison(false);
+					j.setNombreTourPrison(0);
+					j.setNbCarteSortiePrison(j.getNbCarteSortiePrison() - 1);
+				}
+			}
+			if (j.isEnPrison()) {
+				cout << "VOULEZ-VOUS PAYER L'AMENDE (50) OU TENTER DE LANCER LES DES POUR FAIRE UN DOUBLE (AMENDE/DES)";
+				bool input2Incorrect = true;
+				string input2;
+				while (input2Incorrect) {
+					std::getline(std::cin, input2);
+					if (input2 == "AMENDE") {
+						input2Incorrect = false;
+						j.subArgent(50); //VERIFIER FAILLITE 
+					}
+					if (input2 == "DES") {
+						input2Incorrect = false;
+						for (De d : this->des_) {
+							lance += d.getValeur();
+						}
+						if (this->getDes()[0].getValeur() == this->getDes()[1].getValeur()) {
+							j.setEnPrison(false);
+							j.setNombreTourPrison(0);
+							tirerDes = false; //Le joueur a effectué un double donc ne doit pas retirer les dés
+						}
+					}
+				}
+				
+			}
 		}
-		
-		j.setPosition((j.getPosition() + lance) % 40);
+	}
+	if (tirerDes) { //Le joueur a pu faire un double en sortant de prison
+		for (De d : this->des_) {
+			d.lancerDe();
+			lance += d.getValeur();
+		}
+		cout << "Le lancer de dés a donné :" << lance;
+		if (this->getDes()[0].getValeur() == this->getDes()[1].getValeur()) {
+			j.setNbDouble(j.getNbDoubles() + 1);
+			cout << "VOUS AVEZ EFFECTUÉ UN DOUBLE, VOUS EN ÊTES A" << j.getNbDoubles() << "DOUBLES D'AFFILÉ";
+		}
+		else {
+			j.setNbDouble(0);
+		}
 
-		auto& caseArrivee = *(this->plateau_.getCase(j.getPosition()));
-		if ((caseArrivee.getClass() == "Gare") || (caseArrivee.getClass() == "ServicePublic") || (caseArrivee.getClass() == "Terrain")) {
-			//CasePropriete caseAchetable = *(this->plateau_.getCase(j.getPosition()));
-			//PROPOSER AU JOUEUR D'ACHETER LA CASE
-			//VERIFIER S'IL POSSEDE ASSEZ D'ARGENT
-			bool acheterCase = true; // s'il veut acheter la case on met le booléen à vrai, MIS A VRAI DE BASE POUR PAS QUE CA BUG
-			if (acheterCase) {
-				if (j.getSolde() >= caseArrivee.getPrix()) {
-					caseArrivee.setProprietaire(j);
-					j.subArgent(caseArrivee.getPrix());
-					//AJOUTER LA PROPRIETE A CELLES DU JOUEUR
+		if (j.getNbDoubles() == 3) {
+			cout << "TROP DE DOUBLES A LA SUITE : VOUS ALLEZ EN PRISON !";
+			j.allerEnPrison();
+		}
+		else {
+			if (j.getPosition() + lance >= 40) {
+				cout << "VOUS PASSEZ PAR LA CASE DEPART ET RECEVEZ" << this->getSalaire();
+				j.addArgent(this->getSalaire());
+			}
+
+			j.setPosition((j.getPosition() + lance) % 40);
+
+			auto& caseArrivee = *(this->plateau_.getCase(j.getPosition()));
+			cout << "VOUS ARRIVEZ SUR LA CASE" << caseArrivee.getPosition();
+			if ((caseArrivee.getClass() == "Gare") || (caseArrivee.getClass() == "ServicePublic") || (caseArrivee.getClass() == "Terrain")) {
+				//CasePropriete caseAchetable = *(this->plateau_.getCase(j.getPosition()));
+				//PROPOSER AU JOUEUR D'ACHETER LA CASE
+				//VERIFIER S'IL POSSEDE ASSEZ D'ARGENT
+				bool acheterCase = true; // s'il veut acheter la case on met le booléen à vrai, MIS A VRAI DE BASE POUR PAS QUE CA BUG
+				if (acheterCase) {
+					if (j.getSolde() >= caseArrivee.getPrix()) {
+						caseArrivee.setProprietaire(j);
+						j.subArgent(caseArrivee.getPrix());
+						//AJOUTER LA PROPRIETE A CELLES DU JOUEUR
+					}
+					else {
+						//Afficher qu'il possède pas assez d'argent pour
+					}
+				}
+			}
+			if (caseArrivee.getClass() == "CaseCarteChance") {
+				this->tirerCarteChance(j);
+			}
+			if (caseArrivee.getClass() == "CaseCarteCaisseDeCommunaute") {
+				this->tirerCarteCaisseDeCommunaute(j);
+			}
+			if (caseArrivee.getClass() == "CaseDepart") {
+				//On fait rien on aura déjà ajouter le salaire
+			}
+			if (caseArrivee.getClass() == "CaseParcGratuit") {
+				//CaseParcGratuit nCaseArrivee = this->plateau_[j].getPosition];
+				//nCaseArrivee.recupererArgent(j);
+			}
+			if (caseArrivee.getClass() == "CasePrison") {
+				//On fait rien
+			}
+			if (caseArrivee.getClass() == "CaseTaxe") {
+				//CaseTaxe nCaseArrivee = this->plateau_[j].getPosition];
+				//CaseParcGratuit parcGratuit = this->plateau_[19];
+				/*if (j.getSolde() >= nCaseArrivee.getTaxe()) {
+					parcGratuit.ajouterArgent(nCaseArrivee.getTaxe());
+					j.subArgent((nCaseArrivee.getTaxe());
 				}
 				else {
-					//Afficher qu'il possède pas assez d'argent pour
-				}
+					//LE JOUEUR DOIT HYPOTHEQUER DES TERRAINS
+				}*/
 			}
-		}
-		/*if (caseArrivee.getClass() == "CaseCarteChance") {
-			//Tirer une carte chance
-		}
-		if (caseArrivee.getClass() == "CaseCarteCaisseDeCommunaute") {
-			//Tirer une carte caisse de communaute
-		}
-		if (caseArrivee.getClass() == "CaseDepart") {
-			//On fait rien on aura déjà ajouter le salaire
-		}
-		if (caseArrivee.getClass() == "CaseParcGratuit") {
-			//CaseParcGratuit nCaseArrivee = this->plateau_[j].getPosition];
-			//nCaseArrivee.recupererArgent(j);
-		}
-		if (caseArrivee.getClass() == "CasePrison") {
-			//On fait rien
-		}
-		if (caseArrivee.getClass() == "CaseTaxe") {
-			//CaseTaxe nCaseArrivee = this->plateau_[j].getPosition];
-			//CaseParcGratuit parcGratuit = this->plateau_[19];
-			/*if (j.getSolde() >= nCaseArrivee.getTaxe()) {
-				parcGratuit.ajouterArgent(nCaseArrivee.getTaxe());
-				j.subArgent((nCaseArrivee.getTaxe());
+			if (caseArrivee.getClass() == "CaseAllerPrison") {
+				j.allerEnPrison();
 			}
-			else {
-				//LE JOUEUR DOIT HYPOTHEQUER DES TERRAINS
-			}
-		}
-		if (caseArrivee.getClass() == "CaseAllerPrison") {
-			j.allerEnPrison();
-		}*/
 
-		//PEUT CONSTRUIRE DES MAISONS
-		//PEUT PROCEDER A UN ECHANGE
-		//PEUT HYPOTHEQUER DES PROPRIETES
-		//PEUT PASSER SON TOUR
+			//PEUT CONSTRUIRE DES MAISONS
+			//PEUT PROCEDER A UN ECHANGE
+			//PEUT HYPOTHEQUER DES PROPRIETES
+			//PEUT PASSER SON TOUR
+		}
 	}
+
+	
 
 	
 }
