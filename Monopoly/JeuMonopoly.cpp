@@ -95,7 +95,7 @@ void JeuMonopoly::tirerCarteChance(Joueur& j) {
 	this->cartesChance_->pop_front();
 	this->cartesChance_->push_back(cc);
 	int id = cc.getID();
-	cout << "VOUS AVEZ TIRÉ LA CARTE CHANCE : " << cc.getDescription();
+	cout << "VOUS AVEZ TIRÉ LA CARTE CHANCE : " << cc.getDescription() << "\n";
 	if (id == 0) {
 		j.setPosition(39);
 	}
@@ -161,7 +161,7 @@ void JeuMonopoly::tirerCarteCaisseDeCommunaute(Joueur& j) {
 	this->cartesCaisseDeCommunautes_->pop_front();
 	this->cartesCaisseDeCommunautes_->push_back(cc);
 	int id = cc.getID();
-	cout << "VOUS AVEZ TIRÉ LA CARTE CAISSE DE COMMUNAUTÉE : " << cc.getDescription();
+	cout << "VOUS AVEZ TIRÉ LA CARTE CAISSE DE COMMUNAUTÉE : " << cc.getDescription() << "\n";
 	if (id == 0) {
 		j.setPosition(0);
 		j.addArgent(this->getSalaire());
@@ -213,7 +213,7 @@ void JeuMonopoly::tirerCarteCaisseDeCommunaute(Joueur& j) {
 		bool incorrectInput = true;
 		while (incorrectInput) {
 			string input;
-			cout << "ENTRER PAYER OU TIRER";
+			cout << "ENTRER PAYER OU TIRER" << "\n";
 			std::getline(std::cin, input);
 			if (input == "PAYER") {
 				j.subArgent(10);
@@ -222,6 +222,9 @@ void JeuMonopoly::tirerCarteCaisseDeCommunaute(Joueur& j) {
 			if (input == "TIRER") {
 				incorrectInput = false;
 				tirerCarteChance(j);
+			}
+			else {
+				cout << "INPUT INCORRECT" << "\n";
 			}
 		}
 		
@@ -302,7 +305,7 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 	if (j.isEnPrison()) {
 		if (j.getNbTourPrison() < 3) {
 			if (j.getNbCarteSortiePrison() > 0) {
-				cout << "VOUS AVEZ UNE CARTE SORTIE DE PRISON, L'UTILISER ? (OUI/NON)";
+				cout << "VOUS AVEZ UNE CARTE SORTIE DE PRISON, L'UTILISER ? (OUI/NON)" << "\n";
 				string input1;
 				std::getline(std::cin, input1);
 				if (input1 == "OUI") {
@@ -312,7 +315,7 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 				}
 			}
 			if (j.isEnPrison()) {
-				cout << "VOULEZ-VOUS PAYER L'AMENDE (50) OU TENTER DE LANCER LES DES POUR FAIRE UN DOUBLE (AMENDE/DES)";
+				cout << "VOULEZ-VOUS PAYER L'AMENDE (50 M) OU TENTER DE LANCER LES DES POUR FAIRE UN DOUBLE (AMENDE/DES)" << "\n";
 				bool input2Incorrect = true;
 				string input2;
 				while (input2Incorrect) {
@@ -332,6 +335,9 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 							tirerDes = false; //Le joueur a effectué un double donc ne doit pas retirer les dés
 						}
 					}
+					else {
+						cout << "INPUT INCORRECT" << "\n";
+					}
 				}
 				
 			}
@@ -342,42 +348,52 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 			d.lancerDe();
 			lance += d.getValeur();
 		}
-		cout << "Le lancer de dés a donné :" << lance;
+		cout << "Le lancer de dés a donné :" << lance << "\n";
 		if (this->getDes()[0].getValeur() == this->getDes()[1].getValeur()) {
 			j.setNbDouble(j.getNbDoubles() + 1);
-			cout << "VOUS AVEZ EFFECTUÉ UN DOUBLE, VOUS EN ÊTES A" << j.getNbDoubles() << "DOUBLES D'AFFILÉ";
+			cout << "VOUS AVEZ EFFECTUÉ UN DOUBLE, VOUS EN ÊTES A" << j.getNbDoubles() << "DOUBLES D'AFFILÉ" << "\n";
 		}
 		else {
 			j.setNbDouble(0);
 		}
 
 		if (j.getNbDoubles() == 3) {
-			cout << "TROP DE DOUBLES A LA SUITE : VOUS ALLEZ EN PRISON !";
+			cout << "TROP DE DOUBLES A LA SUITE : VOUS ALLEZ EN PRISON !" << "\n";
 			j.allerEnPrison();
 		}
 		else {
 			if (j.getPosition() + lance >= 40) {
-				cout << "VOUS PASSEZ PAR LA CASE DEPART ET RECEVEZ" << this->getSalaire();
+				cout << "VOUS PASSEZ PAR LA CASE DEPART ET RECEVEZ" << this->getSalaire() << " M \n";
 				j.addArgent(this->getSalaire());
 			}
 
 			j.setPosition((j.getPosition() + lance) % 40);
 
 			auto& caseArrivee = *(this->plateau_.getCase(j.getPosition()));
-			cout << "VOUS ARRIVEZ SUR LA CASE" << caseArrivee.getPosition();
+			cout << "VOUS ARRIVEZ SUR LA CASE NUMERO : " << caseArrivee.getPosition();
 			if ((caseArrivee.getClass() == "Gare") || (caseArrivee.getClass() == "ServicePublic") || (caseArrivee.getClass() == "Terrain")) {
 				//CasePropriete caseAchetable = *(this->plateau_.getCase(j.getPosition()));
-				//PROPOSER AU JOUEUR D'ACHETER LA CASE
-				//VERIFIER S'IL POSSEDE ASSEZ D'ARGENT
-				bool acheterCase = true; // s'il veut acheter la case on met le booléen à vrai, MIS A VRAI DE BASE POUR PAS QUE CA BUG
-				if (acheterCase) {
-					if (j.getSolde() >= caseArrivee.getPrix()) {
+				cout << " QUI EST LA CASE : " << caseArrivee.getNom() << "\n";
+				if (caseArrivee.getSansProprietaire()) {
+					cout << "VOULEZ-VOUS ACHETER LA CASE POUR : " << caseArrivee.getPrix() << " M (OUI/NON)" << "\n";
+					string input3;
+					std::getline(std::cin, input3);
+					if (input3 == "OUI") {
 						caseArrivee.setProprietaire(j);
 						j.subArgent(caseArrivee.getPrix());
 						//AJOUTER LA PROPRIETE A CELLES DU JOUEUR
 					}
+				}
+				else {
+					if (caseArrivee.getProprietaire() == j) {
+						//Il se la coule douce
+					}
 					else {
-						//Afficher qu'il possède pas assez d'argent pour
+						while (j.getSolde() < caseArrivee.getLoyer()) {
+							//On doit hypothéquer : faire une fonction j.hypothequer() qui force le joueur à choisir des propriétés à hypothéquer
+						}
+						j.subArgent(caseArrivee.getLoyer());
+						caseArrivee.getProprietaire().addArgent(caseArrivee.getLoyer());
 					}
 				}
 			}
@@ -391,22 +407,22 @@ void JeuMonopoly::jouerTour(Joueur& j) {
 				//On fait rien on aura déjà ajouter le salaire
 			}
 			if (caseArrivee.getClass() == "CaseParcGratuit") {
-				//CaseParcGratuit nCaseArrivee = this->plateau_[j].getPosition];
-				//nCaseArrivee.recupererArgent(j);
+				cout << "JACPOT : RECEVEZ " << caseArrivee.getArgentStock() << " M \n";
+				caseArrivee.recupererArgent(j);
 			}
 			if (caseArrivee.getClass() == "CasePrison") {
 				//On fait rien
 			}
 			if (caseArrivee.getClass() == "CaseTaxe") {
 				//CaseTaxe nCaseArrivee = this->plateau_[j].getPosition];
-				//CaseParcGratuit parcGratuit = this->plateau_[19];
-				/*if (j.getSolde() >= nCaseArrivee.getTaxe()) {
-					parcGratuit.ajouterArgent(nCaseArrivee.getTaxe());
-					j.subArgent((nCaseArrivee.getTaxe());
+				auto& parcGratuit = *(this->plateau_.getCase(20));
+				if (j.getSolde() >= caseArrivee.getTaxe()) {
+					parcGratuit.ajouterArgent(caseArrivee.getTaxe());
+					j.subArgent(caseArrivee.getTaxe());
 				}
 				else {
-					//LE JOUEUR DOIT HYPOTHEQUER DES TERRAINS
-				}*/
+					//On doit hypothéquer : faire une fonction j.hypothequer() qui force le joueur à choisir des propriétés à hypothéquer
+				}
 			}
 			if (caseArrivee.getClass() == "CaseAllerPrison") {
 				j.allerEnPrison();

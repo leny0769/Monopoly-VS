@@ -12,7 +12,7 @@ class CasePrison : public Case {
     public:
         CasePrison();
         CasePrison(int position, std::string classe, int prixLiberation);
-        void sortirPrison();
+        int getPrixLiberation();
 
     private:
         int prixLiberation_;

@@ -21,3 +21,7 @@ void CaseParcGratuit::recupererArgent(Joueur& joueur) {
     joueur.addArgent(this->argentStock_);
     this->argentStock_ = 0;
 }
+
+int getArgentStock() {
+    return this.argentStock_;
+}

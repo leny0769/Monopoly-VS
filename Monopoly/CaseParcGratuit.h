@@ -14,6 +14,7 @@ class CaseParcGratuit : public Case {
         CaseParcGratuit(int  position, std::string classe);
         void ajouterArgent(int montant);
         void recupererArgent(Joueur& joueur);
+        int getArgentStock();
 
     private:
         int argentStock_;
