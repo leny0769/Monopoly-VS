@@ -9,8 +9,7 @@ CarteChance::CarteChance() {
 
 }
 
-CarteChance::CarteChance(int id) {
-    Carte(id);
+CarteChance::CarteChance(int id) : Carte(id) {
     if (id == 0) {
         this->description_ = "Rendez-vous Rue de la Paix";
     }

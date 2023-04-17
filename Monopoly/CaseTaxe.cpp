@@ -8,8 +8,7 @@ CaseTaxe::CaseTaxe() {
 
 }
 
-CaseTaxe::CaseTaxe(int position, std::string classe, int taxe) {
-	Case(position,classe);
+CaseTaxe::CaseTaxe(int position, std::string classe, int taxe) : Case(position, classe) {
 	this->taxe_ = taxe;
 }
 

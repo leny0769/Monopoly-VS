@@ -9,6 +9,5 @@ CaseAllerPrison::CaseAllerPrison() {
 
 }
 
-CaseAllerPrison::CaseAllerPrison(int position, std::string classe) {
-	Case(position, classe);
+CaseAllerPrison::CaseAllerPrison(int position, std::string classe) : Case(position, classe) {
 }

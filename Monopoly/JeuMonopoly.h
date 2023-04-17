@@ -38,11 +38,11 @@ class JeuMonopoly {
         int tourDuJoueur_;
         vector<De> des_;
         Plateau plateau_;
-        Banque banque_;
+        //Banque banque_;
         vector<Joueur> joueurs_;
         list<CarteChance> cartesChance_[16];
         list<CarteCaisseDeCommunaute> cartesCaisseDeCommunautes_[16];
-        Langue langue_;
+        //Langue langue_;
 };
 
 #endif;

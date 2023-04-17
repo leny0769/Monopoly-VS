@@ -5,13 +5,11 @@
 using namespace std;
 
 
-
 CaseParcGratuit::CaseParcGratuit() {
 
 }
 
-CaseParcGratuit::CaseParcGratuit(int  position, std::string classe) {
-     Case(position,classe);
+CaseParcGratuit::CaseParcGratuit(int  position, std::string classe) : Case(position, classe) {
      this->argentStock_ = 0;
 }
 

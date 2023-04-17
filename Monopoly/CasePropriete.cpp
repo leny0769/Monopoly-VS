@@ -6,12 +6,11 @@
 
 using namespace std;
 
-CasePropriete::CasePropriete() {
+CasePropriete::CasePropriete() : Case() {
 
 }
 
-CasePropriete::CasePropriete(int position, std::string classe, std::string nom, int prix, std::string type_couleur) {
-    Case(position,classe);
+CasePropriete::CasePropriete(int position, std::string classe, std::string nom, int prix, std::string type_couleur) : Case(position, classe) {
     this->nom_ = nom;
     this->prix_ = prix;
     this->type_couleur_ = type_couleur;

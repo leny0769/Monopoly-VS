@@ -7,12 +7,13 @@
 
 using namespace std;
 
+class GroupeTerrain;
 
 class Terrain : public CasePropriete {
     public:
         Terrain();
         Terrain(int position, std::string classe,int loyer[5], string nom, int prix, string type_couleur);
-        GroupeTerrain getGroupeTerrain();
+        GroupeTerrain* getGroupeTerrain();
         int getLoyer();
         int getValeurHypotheque();
         void construireMaison();
@@ -21,7 +22,7 @@ class Terrain : public CasePropriete {
     private:
         int loyer_[5];
         int nombreMaison_;
-        GroupeTerrain groupeTerrain_;
+        GroupeTerrain* groupeTerrain_;
 };
 
 #endif;

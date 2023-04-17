@@ -8,6 +8,5 @@ CaseChance::CaseChance() {
 
 }
 
-CaseChance::CaseChance(int position, std::string classe) {
-	Case(position,classe);
+CaseChance::CaseChance(int position, std::string classe) : Case(position, classe) {
 }

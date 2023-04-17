@@ -8,7 +8,6 @@ CasePrison::CasePrison() {
 
 }
 
-CasePrison::CasePrison(int position, std::string classe,int prixLiberation) {
-    Case(position,classe);
+CasePrison::CasePrison(int position, std::string classe,int prixLiberation) : Case(position, classe) {
     this->prixLiberation_ = prixLiberation;
 }

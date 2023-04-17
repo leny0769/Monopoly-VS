@@ -10,8 +10,7 @@ CarteCaisseDeCommunaute::CarteCaisseDeCommunaute() {
 
 }
 
-CarteCaisseDeCommunaute::CarteCaisseDeCommunaute(int id) {
-	Carte(id);
+CarteCaisseDeCommunaute::CarteCaisseDeCommunaute(int id) : Carte(id) {
 	if (id == 0) {
 		this->description_ = "Placez-vous sur la case départ";
 	}

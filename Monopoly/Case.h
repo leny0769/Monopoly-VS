@@ -13,7 +13,7 @@ class Case {
         int getPosition();
         string getClass();
 
-    private:
+    protected:
         int position_;
         string class_;
         //PathImage image_;

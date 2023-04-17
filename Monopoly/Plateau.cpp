@@ -11,7 +11,7 @@ using namespace std;
 
 
 Plateau::Plateau() {
-    FabriqueCase fabrique = FabriqueCase();
+    //FabriqueCase fabrique = FabriqueCase();
     //this->cases_[0] = fabrique.creerCase("depart", 0, salaire = 200);
 }
 
@@ -21,6 +21,6 @@ Case* Plateau::getCase(int position) {
     }
 }
 
-vector<std::unique_ptr<Case>> Plateau::getCases() {
+/*vector<std::unique_ptr<Case>> Plateau::getCases() {
     return this->cases_;
-}
+}*/

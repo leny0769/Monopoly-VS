@@ -10,12 +10,12 @@ Joueur::Joueur() {
 
 }
 
-Joueur::Joueur(string nom, int argent, Pion pion)
+Joueur::Joueur(string nom, int argent)
 {
 	this->argent_ = argent;
 	this->position_ = 0;
 	this->nom_ = nom;
-	this->pion_ = pion;
+	//this->pion_ = pion;
 	this->prison_ = false;
 	this->carteSortiePrison_ = 0;
 	this->nombreDoubles_ = 0;

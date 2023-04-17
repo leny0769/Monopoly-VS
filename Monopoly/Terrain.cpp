@@ -10,23 +10,22 @@ using namespace std;
 Terrain::Terrain() {
 };
 
-Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int prix, string type_couleur) {
-    CasePropriete(position,classe,nom, prix, type_couleur);
+Terrain::Terrain(int position, std::string classe, int loyer[5], string nom, int prix, string type_couleur) : CasePropriete(position, classe, nom, prix, type_couleur) {
     for (int i = 0; i < 5; i++) {
         this->loyer_[i] = loyer[i];
     }
     this->nombreMaison_ = 0;
 }
 
-GroupeTerrain Terrain::getGroupeTerrain() {
+GroupeTerrain* Terrain::getGroupeTerrain() {
     return this->groupeTerrain_;
 }
 
 int Terrain::getLoyer() {
     int facteur = 1;
-    if (this->getGroupeTerrain().uniqueProprietaire()) {
+    /*if (this->getGroupeTerrain().uniqueProprietaire()) {
         facteur = 2;
-    }
+    }*/
     return this->loyer_[nombreMaison_] * facteur;
 }
 
