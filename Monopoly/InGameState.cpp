@@ -100,10 +100,9 @@ int InGameState::afficherInterface(sf::RenderWindow& window, sf::Font monopolyFo
 
 		for (int i = 0; i < nbPlayer; i++) {
 			//int playerPosition = game.getPlayerPosition(i);
-			printPlayerOnCell(window, playerPieces[i], i, 0);
+			printPlayerOnCell(window, playerPieces[i], i + 1, 30, nbPlayer);
 			//playerPrevPos[i] = game.getPlayerPosition(i);
 		}
-
 
 		window.display();
 	}
@@ -115,10 +114,44 @@ void InGameState::jouerMusique() {
 	std::cout << "Jouer de la musique du menu principal\n";
 }
 
-void InGameState::printPlayerOnCell(sf::RenderWindow& window, sf::RectangleShape shape, int numJoueur, int numCase) {
+void InGameState::printPlayerOnCell(sf::RenderWindow& window, sf::RectangleShape shape, int numJoueur, int numCase, int nbJoueur) {
 
-	int x = 625 + 27 + (numJoueur - 1) * 5;
-	int y = 650;
+	int x, y = 0;
+
+	if (numCase == 0) {
+		y = 663;
+		x = (int)(625 + 14 + (numJoueur - 1) * (50 / (nbJoueur - 1)));
+	}
+	else if (numCase >= 1 && numCase <= 9) {
+		y = 670;
+		x = (int)(118 + (9 - numCase) * 56.25 + 10 + (numJoueur - 1) * (25 / (nbJoueur - 1)));
+	}
+	// TODO : gérer le cas ou on est en prison
+	else if (numCase == 10) {
+		y = 685;
+		x = (int)(28 + 14 + (numJoueur - 1) * (50 / (nbJoueur - 1)));
+	}
+	if (numCase >= 11 && numCase <= 19) {
+		y = (int)(107 + (19 - numCase) * 56.25 + 10 + (numJoueur - 1) * (25 / (nbJoueur - 1)));
+		x = 57;
+	}
+	else if (numCase == 20) {
+		y = 57;
+		x = (int)(28 + 14 + (numJoueur - 1) * (50 / (nbJoueur - 1)));
+	}
+	if (numCase >= 21 && numCase <= 29) {
+		y = 50;
+		x = (int)(118 + (numCase - 21) * 56.25 + 10 + (numJoueur - 1) * (25 / (nbJoueur - 1)));
+	}
+	else if (numCase == 30) {
+		y = 57;
+		x = (int)(625 + 14 + (numJoueur - 1) * (50 / (nbJoueur - 1)));
+	}
+	if (numCase >= 31 && numCase <= 39) {
+		y = (int)(107 + (numCase - 31) * 56.25 + 10 + (numJoueur - 1) * (25 / (nbJoueur - 1)));
+		x = 677;
+	}
+
 	sf::Vector2f playerPos = window.mapPixelToCoords(sf::Vector2i(x, y));
 
 	shape.setPosition(playerPos);
