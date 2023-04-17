@@ -31,6 +31,7 @@ class Joueur {
 		bool subArgent(int montant);
 		int getPosition();
 		void setPosition(int position);
+		void doitHypothéquer();
 		bool operator==(const Joueur& j2) const;
 
     private:

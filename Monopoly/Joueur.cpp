@@ -110,3 +110,7 @@ bool Joueur::operator==(const Joueur& j2) const
 {
 	return (getNom() == j2.getNom());
 }
+
+void Joueur::doitHypothéquer() {
+
+}
