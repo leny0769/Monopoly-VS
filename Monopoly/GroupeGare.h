@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #include "Joueur.h"
+#include "Gare.h"
 
 using namespace std;
 

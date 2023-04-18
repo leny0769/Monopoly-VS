@@ -6,19 +6,17 @@
 
 using namespace std;
 
-class GroupeGare;
-
-class Gare : public CasePropriete {
+class Gare /* : public CasePropriete*/ {
     public:
         Gare();
         Gare(int position, std::string classe, int loyerGare[4], std::string nom, int prix, std::string type_couleur);
         int getLoyer();
-        GroupeGare* getGroupeGare();
+        //GroupeGare* getGroupeGare();
         int getValeurHypotheque();
 
     private:
         int loyer_[4];
-        GroupeGare* groupeGare_;
+        //GroupeGare* groupeGare_;
 };
 
 #endif;

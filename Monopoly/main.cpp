@@ -30,19 +30,17 @@ int main()
 
 	game.setState(new MainMenuState());
 	game.afficherInterface(window, monopolyFont, NULL);
-	//currentState_->jouerMusique();
+
 
 	// Changer l'état du jeu pour le menu de sélection de joueur
 	game.setState(new PlayerMenuState());
 	int nbPlayer = game.afficherInterface(window, monopolyFont, NULL);
-	//currentState_->jouerMusique();
+
 
 	// Changer l'état du jeu pour être en jeu
 	game.setState(new InGameState());
 	game.afficherInterface(window, monopolyFont, nbPlayer);
-	//currentState_->jouerMusique();
 
-	std::cout << nbPlayer << std::endl;
 
 
 	/*JeuMonopoly Partie;

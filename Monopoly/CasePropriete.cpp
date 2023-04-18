@@ -47,7 +47,7 @@ void CasePropriete::setProprietaire(Joueur& proprietaire) {
     this->sansProprietaire_ = false;
 }
 
-void CasePropriete::setHypotheque(bool b) {
+/*void CasePropriete::setHypotheque(bool b) {
     Joueur proprietaire = this->getProprietaire();
     if (b == true) {
         proprietaire.addArgent(this->getValeurHypotheque());
@@ -63,7 +63,7 @@ void CasePropriete::setHypotheque(bool b) {
         }
     }
     
-}
+}*/
 
 int CasePropriete::getValeurHypotheque() {
     return 0;
