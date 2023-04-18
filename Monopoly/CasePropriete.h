@@ -5,7 +5,9 @@
 #include "Joueur.h"
 #include "Case.h"
 #include "Joueur.h"
-
+#include "GroupeTerrain.h"
+#include "GroupeServicePublic.h"
+#include "GroupeGare.h"
 using namespace std;
 
 class CasePropriete : public Case {
@@ -15,28 +17,32 @@ class CasePropriete : public Case {
         CasePropriete();
         CasePropriete(int position, std::string classe, std::string nom, int prix, std::string type_couleur);
         bool getSansProprietaire();
-        int getPrix();
+        int getPrix() override;
         bool getHypotheque();
         Joueur getProprietaire();
         std::string getNom();
         std::string getTypeCouleur();
-        void setProprietaire(Joueur& proprietaire);
+        void setProprietaire(Joueur& proprietaire) override;
         void setHypotheque(bool b);
         int getValeurHypotheque();
-        
-        virtual int getLoyer() = 0;
 
         //METHODES TERRAIN
-        //virtual GroupeTerrain* getGroupeTerrain() = 0;
-        virtual void construireMaison() = 0;
-        virtual void vendreMaison() = 0;
+        GroupeTerrain* getGroupeTerrain();
+        int getLoyer();
+        int getValeurHypotheque();
+        void construireMaison();
+        void vendreMaison();
 
         //METHODES SERVICEPUBLIC
-        //virtual GroupeServicePublic* getGroupeServicePublic() = 0;
+        //int getLoyer();
+        GroupeServicePublic* getGroupeServicePublic();
         //int getValeurHypotheque();
 
         //METHODES GARE
-        //GroupeGare* getGroupeGare();
+
+        int getLoyer();
+        GroupeGare* getGroupeGare();
+        int getValeurHypotheque();
 
     private:
         std::string nom_;

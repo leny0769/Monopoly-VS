@@ -22,12 +22,23 @@
     <ClCompile Include="Carte.cpp" />
     <ClCompile Include="CarteCaisseDeCommunaute.cpp" />
     <ClCompile Include="CarteChance.cpp" />
+    <ClCompile Include="Case.cpp" />
     <ClCompile Include="CasePropriete.cpp" />
+    <ClCompile Include="De.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Gare.cpp" />
+    <ClCompile Include="GroupeGare.cpp" />
+    <ClCompile Include="GroupeServicePublic.cpp" />
+    <ClCompile Include="GroupeTerrain.cpp" />
     <ClCompile Include="InGameState.cpp" />
+    <ClCompile Include="JeuMonopoly.cpp" />
+    <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="Plateau.cpp" />
     <ClCompile Include="PlayerMenuState.cpp" />
+    <ClCompile Include="ServicePublic.cpp" />
+    <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Face1.png" />
@@ -57,6 +68,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Gare.h" />
+    <ClInclude Include="GroupeGare.h" />
+    <ClInclude Include="GroupeServicePublic.h" />
+    <ClInclude Include="GroupeTerrain.h" />
     <ClInclude Include="InGameState.h" />
     <ClInclude Include="JeuMonopoly.h" />
     <ClInclude Include="Joueur.h" />

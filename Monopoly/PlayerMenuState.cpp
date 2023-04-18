@@ -12,49 +12,55 @@ int PlayerMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopo
 
 		gameStarted = true;
 
+		// Keeps the total number of players
+		// that the user has asked for
+		// the game supports 3 - 5 players.
 
 		// Background screen
 		sf::Texture playerNumberScreenTexture;
-		playerNumberScreenTexture.loadFromFile("Assets/menu.jpg");
+		playerNumberScreenTexture.loadFromFile("assets/menu.jpg");
 		sf::RectangleShape playerNumberScreen(sf::Vector2f(1280.0f, 720.0f));
 		playerNumberScreen.setTexture(&playerNumberScreenTexture);
 
 
 		// 2 player
-		sf::Texture twoPlayerTexture;
-		twoPlayerTexture.loadFromFile("Assets/2PlayerButton.png");
-		sf::RectangleShape twoPlayerCard(sf::Vector2f(200.0f, 100.0f));
-		twoPlayerCard.setTexture(&twoPlayerTexture);
-		twoPlayerCard.setPosition(sf::Vector2f(140.0f, 210.0f));
+		//sf::Texture twoPlayerTexture;
+		//twoPlayerTexture.loadFromFile("assets/3-player-card.png");
+		sf::RectangleShape twoPlayerCard(sf::Vector2f(150.0f, 100.0f));
+		//twoPlayerCard.setTexture(&woPlayerTexture);
+		twoPlayerCard.setPosition(sf::Vector2f(150.0f, 200.0f));
 
 		// 3 player
-		sf::Texture threePlayerTexture;
-		threePlayerTexture.loadFromFile("Assets/3PlayerButton.png");
-		sf::RectangleShape threePlayerCard(sf::Vector2f(200.0f, 100.0f));
-		threePlayerCard.setTexture(&threePlayerTexture);
-		threePlayerCard.setPosition(sf::Vector2f(540.0f, 210.0f));
+		//sf::Texture twoPlayerTexture;
+		//twoPlayerTexture.loadFromFile("assets/3-player-card.png");
+		sf::RectangleShape threePlayerCard(sf::Vector2f(150.0f, 100.0f));
+		//twoPlayerCard.setTexture(&woPlayerTexture);
+		threePlayerCard.setPosition(sf::Vector2f(350.0f, 200.0f));
 
 		// 4 player
-		sf::Texture fourPlayerTexture;
-		fourPlayerTexture.loadFromFile("Assets/4PlayerButton.png");
-		sf::RectangleShape fourPlayerCard(sf::Vector2f(200.0f, 100.0f));
-		fourPlayerCard.setTexture(&fourPlayerTexture);
-		fourPlayerCard.setPosition(sf::Vector2f(940.0f, 210.0f));
+		//sf::Texture twoPlayerTexture;
+		//twoPlayerTexture.loadFromFile("assets/3-player-card.png");
+		sf::RectangleShape fourPlayerCard(sf::Vector2f(150.0f, 100.0f));
+		//twoPlayerCard.setTexture(&woPlayerTexture);
+		fourPlayerCard.setPosition(sf::Vector2f(550.0f, 200.0f));
 
 		// 5 player
-		sf::Texture fivePlayerTexture;
-		fivePlayerTexture.loadFromFile("Assets/5PlayerButton.png");
-		sf::RectangleShape fivePlayerCard(sf::Vector2f(200.0f, 100.0f));
-		fivePlayerCard.setTexture(&fivePlayerTexture);
-		fivePlayerCard.setPosition(sf::Vector2f(340.0f, 410.0f));
+		//sf::Texture twoPlayerTexture;
+		//twoPlayerTexture.loadFromFile("assets/3-player-card.png");
+		sf::RectangleShape fivePlayerCard(sf::Vector2f(150.0f, 100.0f));
+		//twoPlayerCard.setTexture(&woPlayerTexture);
+		fivePlayerCard.setPosition(sf::Vector2f(750.0f, 200.0f));
 
 		// 6 player
-		sf::Texture sixPlayerTexture;
-		sixPlayerTexture.loadFromFile("Assets/6PlayerButton.png");
-		sf::RectangleShape sixPlayerCard(sf::Vector2f(200.0f, 100.0f));
-		sixPlayerCard.setTexture(&sixPlayerTexture);
-		sixPlayerCard.setPosition(sf::Vector2f(740.0f, 410.0f));
+		//sf::Texture twoPlayerTexture;
+		//twoPlayerTexture.loadFromFile("assets/3-player-card.png");
+		sf::RectangleShape sixPlayerCard(sf::Vector2f(150.0f, 100.0f));
+		//twoPlayerCard.setTexture(&woPlayerTexture);
+		sixPlayerCard.setPosition(sf::Vector2f(950.0f, 200.0f));
 
+		//bool playerSelected = false;
+
+		//sf::Clock clk;
 
 		while (totalPlayers == -1) {
 			sf::Event evt;
@@ -90,11 +96,15 @@ int PlayerMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopo
 			window.draw(fivePlayerCard);
 			window.draw(sixPlayerCard);
 			window.display();
+
 		}
+
 	}
+
 	return totalPlayers;
 }
 
 void PlayerMenuState::jouerMusique() {
+    std::cout << "Jouer de la musique du menu de sélection de joueur\n";
 }
 */

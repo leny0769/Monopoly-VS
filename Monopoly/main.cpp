@@ -11,13 +11,39 @@
 
 int main()
 {
-	vector<Joueur> joueurs;
-	joueurs.resize(2);
-	Joueur moi = Joueur("Antoine", 9999);
-	Joueur autre = Joueur("Autre", 9999);
-	joueurs.push_back(moi);
-	joueurs.push_back(autre);
-	JeuMonopoly Partie = JeuMonopoly(joueurs);
+	// Fenêtre
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "Monopoly by Antoine PERRIN-DELORT & Lény METZGER", sf::Style::Close);
+
+	// Ajout de l'icone
+	sf::Image favicon;
+	favicon.loadFromFile("Assets/icone_monopoly.png");
+	window.setIcon(256, 256, favicon.getPixelsPtr());
+
+	// Monopoly Font
+	sf::Font monopolyFont;
+	monopolyFont.loadFromFile("Fonts/KabelBdNormal.ttf");
+
+
+	Game& game = Game::getInstance();
+
+	game.setState(new MainMenuState());
+	game.afficherInterface(window, monopolyFont, NULL);
+	//currentState_->jouerMusique();
+
+	// Changer l'état du jeu pour le menu de sélection de joueur
+	game.setState(new PlayerMenuState());
+	int nbPlayer = game.afficherInterface(window, monopolyFont, NULL);
+	//currentState_->jouerMusique();
+
+	// Changer l'état du jeu pour être en jeu
+	game.setState(new InGameState());
+	game.afficherInterface(window, monopolyFont, nbPlayer);
+	//currentState_->jouerMusique();
+
+	std::cout << nbPlayer << std::endl;
+
+
+	/*JeuMonopoly Partie;
 	
 	while (Partie.isOngoing()) {
 		Joueur j = Partie.getJoueur();

@@ -4,7 +4,6 @@
 #include <string>
 #include <list>
 #include "Joueur.h"
-#include "ServicePublic.h"
 
 using namespace std;
 

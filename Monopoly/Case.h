@@ -3,8 +3,11 @@
 
 #include <string>
 #include "Joueur.h"
-
+#include "GroupeTerrain.h"
+#include "GroupeGare.h"
+#include "GroupeServicePublic.h"
 using namespace std;
+
 
 class Case {
     public:
@@ -24,6 +27,7 @@ class Case {
         };
 
 
+
         //METHODES CASEPROPRIETE
         virtual bool getSansProprietaire() = 0;
         virtual bool getHypotheque() = 0;
@@ -34,19 +38,20 @@ class Case {
         virtual int getValeurHypotheque() = 0;
 
         //METHODES TERRAIN
-        //virtual GroupeTerrain* getGroupeTerrain() = 0;
+        virtual GroupeTerrain* getGroupeTerrain() = 0;
         virtual int getLoyer() = 0;
-        virtual void construireMaison() = 0;
-        virtual void vendreMaison() = 0;
+        virtual int getValeurHypotheque() = 0;
+        virtual  void construireMaison() = 0;
+        virtual  void vendreMaison() = 0;
 
         //METHODES SERVICEPUBLIC
         //int getLoyer();
-        //virtual GroupeServicePublic* getGroupeServicePublic() = 0;
+        virtual GroupeServicePublic* getGroupeServicePublic() = 0;
         //int getValeurHypotheque();
 
         //METHODES GARE
         //virtual int getLoyer() = 0;
-        //virtual GroupeGare* getGroupeGare() = 0;
+        virtual GroupeGare* getGroupeGare() = 0;
        // virtual int getValeurHypotheque() = 0;
 
         //METHODES PARC GRATUIT
@@ -66,6 +71,7 @@ class Case {
     protected:
         int position_;
         string class_;
+        //PathImage image_;
 };
 
 #endif;
