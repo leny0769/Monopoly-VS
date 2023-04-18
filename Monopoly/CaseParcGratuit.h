@@ -5,7 +5,9 @@
 #include <iostream>
 #include "Case.h"
 #include "Joueur.h"
-
+#include "GroupeTerrain.h"
+#include "GroupeGare.h"
+#include "GroupeServicePublic.h"
 
 using namespace std;
 

@@ -2,6 +2,9 @@
 #include "CasePropriete.h"
 #include "Gare.h"
 #include "GroupeGare.h"
+#include <iostream>
+#include "GroupeTerrain.h"
+#include "GroupeServicePublic.h"
 using namespace std;
 
 
@@ -21,7 +24,7 @@ GroupeGare* Gare::getGroupeGare() {
 }
 
 int Gare::getLoyer() {
-    GroupeGare groupeGare = *(this->getGroupeGare());
+    //GroupeGare groupeGare = *(this->getGroupeGare());
     //return this->loyer_[groupeGare.nombreGarePossedees(this->getProprietaire()) - 1];
 }
 

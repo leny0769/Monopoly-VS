@@ -8,6 +8,7 @@
 #include "GroupeTerrain.h"
 #include "GroupeServicePublic.h"
 #include "GroupeGare.h"
+#include <iostream>
 using namespace std;
 
 class CasePropriete : public Case {

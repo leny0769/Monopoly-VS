@@ -3,7 +3,10 @@
 
 #include <string>
 #include "Case.h"
-
+#include <iostream>
+#include "GroupeTerrain.h"
+#include "GroupeGare.h"
+#include "GroupeServicePublic.h"
 
 using namespace std;
 

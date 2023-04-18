@@ -4,7 +4,9 @@
 #include <string>
 #include "CasePropriete.h"
 #include "GroupeTerrain.h"
-
+#include <iostream>
+#include "GroupeGare.h"
+#include "GroupeServicePublic.h"
 using namespace std;
 
 class GroupeTerrain;

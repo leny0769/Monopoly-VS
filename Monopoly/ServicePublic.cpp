@@ -3,6 +3,9 @@
 #include "Joueur.h"
 #include "ServicePublic.h"
 #include "GroupeServicePublic.h"
+#include <iostream>
+#include "GroupeTerrain.h"
+#include "GroupeGare.h"
 using namespace std;
 
 
