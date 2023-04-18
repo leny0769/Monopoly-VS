@@ -20,9 +20,6 @@ class Terrain : public CasePropriete {
         void vendreMaison() override;
 
 
-        int getPrix() override { throw std::runtime_error("méthode d'une autre classe"); };
-        void setProprietaire(Joueur& proprietaire)  override { throw std::runtime_error("méthode d'une autre classe"); };
-
 
         //METHODES SERVICEPUBLIC
         //int getLoyer();
