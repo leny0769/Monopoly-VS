@@ -40,7 +40,7 @@ class Case {
         //METHODES TERRAIN
         virtual GroupeTerrain* getGroupeTerrain() = 0;
         virtual int getLoyer() = 0;
-        virtual int getValeurHypotheque() = 0;
+        virtual int getValeurHypotheque() =0;
         virtual  void construireMaison() = 0;
         virtual  void vendreMaison() = 0;
 
