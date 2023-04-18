@@ -31,7 +31,8 @@
 
 using namespace std;
 
-
+JeuMonopoly::JeuMonopoly() {
+}
 JeuMonopoly::JeuMonopoly(vector<Joueur>& joueurs) {
 	this->salaire_ = 200;
 	this->des_.resize(2);

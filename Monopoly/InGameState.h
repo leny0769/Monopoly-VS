@@ -3,8 +3,8 @@
 
 #include "GameState.h"
 #include <iostream> 
-#include <SFML/Graphics.hpp>
-
+//#include <SFML/Graphics.hpp>
+/*
 class InGameState : public GameState
 {
     public:
@@ -12,6 +12,6 @@ class InGameState : public GameState
         void jouerMusique() override;
         void printPlayerOnCell(sf::RenderWindow& window, sf::RectangleShape shape, int numJoueur, int numCase, int nbJoueur);
 };
-
+*/
 #endif;
 

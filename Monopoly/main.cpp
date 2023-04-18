@@ -1,56 +1,31 @@
-#include <SFML/Graphics.hpp>
 //#include "JeuMonopoly.h"
 //#include "Joueur.h"
 #include <iostream> 
-#include "PlayerMenuState.h"
-#include "MainMenuState.h"
-#include "InGameState.h"
-#include "Game.h"
-
-
-extern const int NB_JOUEUR;
+//#include "PlayerMenuState.h"
+//#include "MainMenuState.h"
+//#include "InGameState.h"
+//#include "Game.h"
+#include "Joueur.h"
+#include "jeuMonopoly.h"
 
 
 int main()
 {
-	// Fenêtre
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "Monopoly by Antoine PERRIN-DELORT & Lény METZGER", sf::Style::Close);
-
-	// Ajout de l'icone
-	sf::Image favicon;
-	favicon.loadFromFile("Assets/icone_monopoly.png");
-	window.setIcon(256, 256, favicon.getPixelsPtr());
-
-	// Monopoly Font
-	sf::Font monopolyFont;
-	monopolyFont.loadFromFile("Fonts/KabelBdNormal.ttf");
-
-
-	Game& game = Game::getInstance();
-
-	game.setState(new MainMenuState());
-	game.afficherInterface(window, monopolyFont, NULL);
-
-
-	// Changer l'état du jeu pour le menu de sélection de joueur
-	game.setState(new PlayerMenuState());
-	int nbPlayer = game.afficherInterface(window, monopolyFont, NULL);
-
-
-	// Changer l'état du jeu pour être en jeu
-	game.setState(new InGameState());
-	game.afficherInterface(window, monopolyFont, nbPlayer);
-
-
-
-	/*JeuMonopoly Partie;
+	vector<Joueur> joueurs;
+	joueurs.resize(2);
+	Joueur moi = Joueur("Antoine", 9999);
+	Joueur autre = Joueur("Autre", 9999);
+	joueurs.push_back(moi);
+	joueurs.push_back(autre);
+	JeuMonopoly Partie = JeuMonopoly(joueurs);
 	
 	while (Partie.isOngoing()) {
 		Joueur j = Partie.getJoueur();
+		cout << "C'EST AU TOUR DE : " << j.getNom();
 		Partie.jouerTour(j);
 		Partie.getNextJoueur();
 	}
-	Joueur gagnant = Partie.getWinner();*/
+	Joueur gagnant = Partie.getWinner();
 
 	return 0;
 }

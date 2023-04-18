@@ -1,7 +1,7 @@
 #include "InGameState.h"
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 #include <iostream> 
-
+/*
 int InGameState::afficherInterface(sf::RenderWindow& window, sf::Font monopolyFont, int nbPlayer) {
 	
 	// Fond
@@ -157,3 +157,4 @@ void InGameState::printPlayerOnCell(sf::RenderWindow& window, sf::RectangleShape
 	shape.setPosition(playerPos);
 	window.draw(shape);
 }
+*/

@@ -1,8 +1,8 @@
 #include "PlayerMenuState.h"
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 #include <iostream> 
 
-
+/*
 int PlayerMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopolyFont, int nbPlayer) {
 	bool gameStarted = false;
 	int totalPlayers = -1;
@@ -97,3 +97,4 @@ int PlayerMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopo
 
 void PlayerMenuState::jouerMusique() {
 }
+*/

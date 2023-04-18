@@ -21,6 +21,7 @@ using namespace std;
 
 class JeuMonopoly {
     public:
+        JeuMonopoly();
         JeuMonopoly(vector<Joueur>& joueurs);
         int getTourDuJoueur();
         vector<De> getDes();

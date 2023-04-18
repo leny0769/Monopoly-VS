@@ -1,8 +1,8 @@
 #include "MainMenuState.h"
-#include <SFML/Graphics.hpp>
+//#include <SFML/Graphics.hpp>
 #include <iostream> 
 
-
+/*
 int MainMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopolyFont, int nbPlayer) {
 	// Intro screen
 	sf::RectangleShape introScreen(sf::Vector2f(1280.0f, 720.0f));
@@ -77,3 +77,4 @@ int MainMenuState::afficherInterface(sf::RenderWindow& window, sf::Font monopoly
 void MainMenuState::jouerMusique() {
 
 }
+*/

@@ -2,8 +2,8 @@
 #define GAME_H
 
 #include "GameState.h"
-#include <SFML/Graphics.hpp>
-
+//#include <SFML/Graphics.hpp>
+/*
 class Game
 {
 	public :
@@ -21,6 +21,6 @@ class Game
 		Game& operator=(const Game&) = delete; // Supprime l'opérateur d'affectation
 		GameState* currentState_;
 };
-
+*/
 #endif
 
