@@ -1,9 +1,7 @@
 #include <string>
 #include <unordered_map>
 #include <iostream>
-#include "Pion.h"
 #include <string>
-#include "CasePropriete.h"
 #include "Joueur.h"
 
 Joueur::Joueur() {
@@ -15,7 +13,6 @@ Joueur::Joueur(string nom, int argent)
 	this->argent_ = argent;
 	this->position_ = 0;
 	this->nom_ = nom;
-	//this->pion_ = pion;
 	this->prison_ = false;
 	this->carteSortiePrison_ = 0;
 	this->nombreDoubles_ = 0;
@@ -120,4 +117,10 @@ void Joueur::doitHypothéquer(int soldeMin) {
 		std::getline(std::cin, input);
 		//boucle sur les prop
 	}
+}
+
+ostream& operator<<(ostream& os, const Joueur& obj) {
+	os << "Nom : " << obj.getNom() << endl;
+	os << "Argent : " << obj.argent_ << endl;
+	return os;
 }

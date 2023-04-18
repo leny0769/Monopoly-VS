@@ -1,12 +1,9 @@
-//#include "JeuMonopoly.h"
-//#include "Joueur.h"
+#include "SFML/Graphics.hpp"
+#include "PlayerMenuState.h"
+#include "MainMenuState.h"
+#include "InGameState.h"
+#include "Game.h"
 #include <iostream> 
-//#include "PlayerMenuState.h"
-//#include "MainMenuState.h"
-//#include "InGameState.h"
-//#include "Game.h"
-#include "Joueur.h"
-#include "jeuMonopoly.h"
 
 
 int main()
@@ -51,7 +48,7 @@ int main()
 		Partie.jouerTour(j);
 		Partie.getNextJoueur();
 	}
-	Joueur gagnant = Partie.getWinner();
+	Joueur gagnant = Partie.getWinner();*/
 
 	return 0;
 }

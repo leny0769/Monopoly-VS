@@ -5,10 +5,8 @@
 #include <unordered_map>
 #include <iostream>
 #include "Pion.h"
-//#include "CasePropriete.h"
 
 using namespace std;
-
 
 class Joueur {
     public:
@@ -33,18 +31,18 @@ class Joueur {
 		void setPosition(int position);
 		void doitHypothéquer(int soldeMin);
 		bool operator==(const Joueur& j2) const;
+		friend ostream& operator<<(ostream& os, const Joueur& obj);
 
     private:
         string nom_;
         int argent_;
-        //unordered_map<std::string, CasePropriete[]> proprietes_;
-        //Pion pion_;
         int position_;
         int carteSortiePrison_;
         bool prison_;
 		int nombreDoubles_;
 		int nombreTourPrison_;
 		string statut_;
+		//unordered_map<std::string, CasePropriete[]> proprietes_;
 };
 
 #endif;

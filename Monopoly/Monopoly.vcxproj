@@ -22,23 +22,13 @@
     <ClCompile Include="Carte.cpp" />
     <ClCompile Include="CarteCaisseDeCommunaute.cpp" />
     <ClCompile Include="CarteChance.cpp" />
-    <ClCompile Include="Case.cpp" />
-    <ClCompile Include="CasePropriete.cpp" />
     <ClCompile Include="De.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Gare.cpp" />
-    <ClCompile Include="GroupeGare.cpp" />
-    <ClCompile Include="GroupeServicePublic.cpp" />
-    <ClCompile Include="GroupeTerrain.cpp" />
     <ClCompile Include="InGameState.cpp" />
-    <ClCompile Include="JeuMonopoly.cpp" />
     <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
-    <ClCompile Include="Plateau.cpp" />
     <ClCompile Include="PlayerMenuState.cpp" />
-    <ClCompile Include="ServicePublic.cpp" />
-    <ClCompile Include="Terrain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Face1.png" />
@@ -50,37 +40,18 @@
     <Image Include="Assets\Monopoly.png" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Banque.h" />
     <ClInclude Include="Carte.h" />
     <ClInclude Include="CarteCaisseDeCommunaute.h" />
     <ClInclude Include="CarteChance.h" />
-    <ClInclude Include="Case.h" />
-    <ClInclude Include="CaseAllerPrison.h" />
-    <ClInclude Include="CaseCaisseDeCommunaute.h" />
-    <ClInclude Include="CaseChance.h" />
-    <ClInclude Include="CaseDepart.h" />
-    <ClInclude Include="CaseParcGratuit.h" />
-    <ClInclude Include="CasePrison.h" />
-    <ClInclude Include="CasePropriete.h" />
-    <ClInclude Include="CaseTaxe.h" />
     <ClInclude Include="De.h" />
-    <ClInclude Include="FabriqueCase.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
-    <ClInclude Include="Gare.h" />
-    <ClInclude Include="GroupeGare.h" />
-    <ClInclude Include="GroupeServicePublic.h" />
-    <ClInclude Include="GroupeTerrain.h" />
     <ClInclude Include="InGameState.h" />
-    <ClInclude Include="JeuMonopoly.h" />
     <ClInclude Include="Joueur.h" />
     <ClInclude Include="Langue.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="Pion.h" />
-    <ClInclude Include="Plateau.h" />
     <ClInclude Include="PlayerMenuState.h" />
-    <ClInclude Include="ServicePublic.h" />
-    <ClInclude Include="Terrain.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
