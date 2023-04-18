@@ -8,7 +8,9 @@
 
 using namespace std;
 
+De::De() {
 
+}
 
 De::De(int numDe) {
     this->diceTexture = new sf::Texture[6];

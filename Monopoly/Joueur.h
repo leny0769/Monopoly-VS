@@ -26,7 +26,7 @@ class Joueur {
 		void setNombreTourPrison(int a);
 		void allerEnPrison();
 		void addArgent(int montant);
-		bool subArgent(int montant);
+		void subArgent(int montant);
 		int getPosition();
 		void setPosition(int position);
 		void doitHypothéquer(int soldeMin);

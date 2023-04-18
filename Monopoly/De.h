@@ -11,6 +11,7 @@ using namespace std;
 
 class De {
     public:
+        De();
         De(int numDe);
         int getValeur();
         void lancerDe();

@@ -4,7 +4,8 @@
 #include "InGameState.h"
 #include "Game.h"
 #include <iostream> 
-
+#include "JeuMonopoly.h"
+#include "Joueur.h"
 
 int main()
 {
@@ -39,12 +40,19 @@ int main()
 
 	std::cout << nbPlayer << std::endl;
 
+	/*vector<Joueur> joueurs;
+	Joueur moi("Antoine", 9999);
+	cout << moi.isEnPrison();
+	cout << moi.getNbCarteSortiePrison();
+	Joueur autre("Autre", 9999);
+	joueurs.push_back(moi);
+	joueurs.push_back(autre);
 
-	/*JeuMonopoly Partie;
-	
+	JeuMonopoly Partie(joueurs);
+
 	while (Partie.isOngoing()) {
 		Joueur j = Partie.getJoueur();
-		cout << "C'EST AU TOUR DE : " << j.getNom();
+		cout << "C'EST AU TOUR DE : " + j.getNom() << std::endl;
 		Partie.jouerTour(j);
 		Partie.getNextJoueur();
 	}

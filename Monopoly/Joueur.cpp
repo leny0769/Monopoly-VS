@@ -99,7 +99,7 @@ void Joueur::addArgent(int montant) {
 	argent_ += montant;
 }
 
-bool Joueur::subArgent(int montant) {
+void Joueur::subArgent(int montant) {
 	argent_ -= montant;
 }
 
